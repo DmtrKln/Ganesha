@@ -1,0 +1,261 @@
+.hero {
+  background-color: $dark-grey;
+  padding: 280px 0 240px 0;
+  position: relative;
+
+  overflow: hidden;
+
+  &__img {
+    position: absolute;
+    max-width: 60%;
+    top: 0;
+    right: 0;
+  }
+
+  &__wrapp {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    align-items: flex-start;
+
+    a {
+      font-family: $font-family;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 110%;
+      color: #fff;
+      padding: 18px 60px;
+      background: $green;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: $white;
+        color: $dark-grey;
+      }
+
+      &:active {
+        background-color: #505050;
+        color: $light-grey;
+      }
+    }
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+    max-width: 750px;
+
+    h1 {
+      font-family: $font-family;
+      font-weight: 500;
+      font-size: 60px;
+      line-height: 110%;
+      color: #fff;
+    }
+    h2 {
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 110%;
+      color: #fff;
+    }
+  }
+}
+
+.catalogPreview {
+  padding: 60px 0 75px 0;
+
+  &__item {
+    display: flex;
+    gap: 20px;
+    justify-content: start;
+    margin-bottom: 40px;
+
+    a {
+      align-self: flex-start;
+      padding: 15px 160px 15px 20px;
+      background: $dark-grey;
+      border-radius: 5px;
+
+      font-family: $font-family;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 110%;
+      color: $white;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    img {
+      border-radius: 5px;
+      width: calc((100% - 40px) / 3);
+    }
+  }
+}
+
+.about {
+  padding: 70px 0 115px 0;
+
+  &__wrapp {
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    h2 {
+      font-family: $font-family;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 110%;
+      color: $dark-grey;
+      max-width: 675px;
+    }
+  }
+
+  &__title {
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 110%;
+    color: $dark-grey;
+  }
+
+  &__desc {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 110%;
+    color: $dark-grey;
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__card {
+    position: relative;
+
+    background: $dark-grey;
+    border-radius: 5px;
+    padding: 0 45px 60px 20px;
+
+    width: calc((100% - 40px) / 3);
+
+    @include tablet {
+      width: calc((100% - 20px) / 2);
+    }
+
+    @include small-tablet {
+      width: 100%;
+
+      padding: 0 35px 30px 15px;
+    }
+
+    h3 {
+      margin-top: 120px;
+
+      font-family: $font-family;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 110%;
+      color: $white;
+      margin-bottom: 20px;
+    }
+    p {
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 110%;
+      color: $white;
+    }
+    svg {
+      position: absolute;
+      top: 40px;
+      right: 55px;
+
+      width: 43px;
+      height: 48px;
+
+      @include small-tablet {
+        width: 36px;
+        height: 34px;
+      }
+    }
+  }
+}
+
+.goods {
+
+  background-color: $dark-grey;
+  padding: 95px 0 0 0;
+
+  &__wrapp {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    h2 {
+      font-family: $font-family;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 110%;
+      color: $white;
+    }
+
+    a{
+      font-family: $font-family;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 110%;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: $green;
+    }
+  }
+  &__swiperReviews {
+    width: 100%;
+    padding: 60px 0;
+  }
+
+  .swiper-slide {
+    height: 465px;
+    width: 390px;
+    background: #2c2c2c;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.4s ease;
+    opacity: 0.5;
+  }
+
+  .swiper-slide-active {
+    opacity: 1;
+  }
+
+  .swiper-slide-prev,
+  .swiper-slide-next {
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,88 @@
+/* Lato */
+
+@font-face {
+  font-family: "Lato";
+  src: local("Lato Medium"), local("Lato-Medium"),
+    url("../fonts/Lato-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: local("Lato Regular"), local("Lato-Regular"),
+    url("../fonts/Lato-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: local("Lato SemiBold"), local("Lato-SemiBold"),
+    url("../fonts/Lato-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: local("Lato Bold"), local("Lato-Bold"),
+    url("../fonts/Lato-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Nunito Sans */
+
+@font-face {
+  font-family: "Nunito Sans";
+  src: local("Nunito Sans Regular"), local("NunitoSans-Regular"),
+    url("../fonts/NunitoSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  src: local("Nunito Sans SemiBold"), local("NunitoSans-SemiBold"),
+    url("../fonts/NunitoSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Geologica */
+
+@font-face {
+  font-family: "Geologica";
+  src: local("Geologica Light"), local("Geologica-Light"),
+    url("../fonts/Geologica_Auto-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geologica";
+  src: local("Geologica Medium"), local("Geologica-Medium"),
+    url("../fonts/Geologica_Auto-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* NovaMono */
+
+@font-face {
+  font-family: "NovaMono";
+  src: local("NovaMono Regular"), local("NovaMono-Regular"),
+    url("../fonts/NovaMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
