@@ -1,149 +1,185 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
-  @include('partials/head.html')
+@include('partials/head.html')
 
-  <body class="page__body">
-    <div class="site-container">
-      @include('partials/header.html')
-      <main class="main">
-        <section class="hero">
-          <div class="container">
-            <div class="hero__wrapp">
-              <div class="hero__desc">
-                <h1>Полный ассортимент швейного оборудования и фурнитуры</h1>
-                <h2>
-                  Откройте для себя широкий ассортимент материалов и
-                  оборудования для вашего швейного бизнеса. Мы предлагаем
-                  высококачественные компоненты для любых нужд!
-                </h2>
-              </div>
-              <a href="#">Посмотреть каталог</a>
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      <section class="hero">
+        <div class="container">
+          <div class="hero__wrapp">
+            <div class="hero__desc">
+              <h1>Полный ассортимент швейного оборудования и фурнитуры</h1>
+              <h2>
+                Откройте для себя широкий ассортимент материалов и
+                оборудования для вашего швейного бизнеса. Мы предлагаем
+                высококачественные компоненты для любых нужд!
+              </h2>
+            </div>
+            <a href="#">Посмотреть каталог</a>
+          </div>
+        </div>
+        <img src="img/main/heroImg.png" class="hero__img" alt="" />
+      </section>
+      <section class="catalogPreview">
+        <div class="container">
+          <div class="catalogPreview__wrapp">
+            <div class="catalogPreview__item">
+              <a href="#">Каталог</a>
+              <a href="#">Контакты</a>
+              <a href="#">Отзывы</a>
+            </div>
+            <div class="catalogPreview__cards">
+              <img src="img/main/catalogPreviewCard1.png" alt="" />
+              <img src="img/main/catalogPreviewCard2.png" alt="" />
+              <img src="img/main/catalogPreviewCard3.png" alt="" />
             </div>
           </div>
-          <img src="img/main/heroImg.png" class="hero__img" alt="" />
-        </section>
-        <section class="catalogPreview">
-          <div class="container">
-            <div class="catalogPreview__wrapp">
-              <div class="catalogPreview__item">
-                <a href="#">Каталог</a>
-                <a href="#">Контакты</a>
-                <a href="#">Отзывы</a>
-              </div>
-              <div class="catalogPreview__cards">
-                <img src="img/main/catalogPreviewCard1.png" alt="" />
-                <img src="img/main/catalogPreviewCard2.png" alt="" />
-                <img src="img/main/catalogPreviewCard3.png" alt="" />
-              </div>
+        </div>
+      </section>
+      <section class="about">
+        <div class="container">
+          <div class="about__wrapp">
+            <div class="about__top">
+              <p class="about__title">О НАС</p>
+              <h2>Надежность и качество — ключевые принципы нашей работы</h2>
+              <p class="about__desc">
+                Мы гарантируем, что каждый наш клиент получит только
+                проверенное и качественное оборудование для шитья, которое
+                обеспечит долгую и бесперебойную работу
+              </p>
             </div>
-          </div>
-        </section>
-        <section class="about">
-          <div class="container">
-            <div class="about__wrapp">
-              <div class="about__top">
-                <p class="about__title">О НАС</p>
-                <h2>Надежность и качество — ключевые принципы нашей работы</h2>
-                <p class="about__desc">
-                  Мы гарантируем, что каждый наш клиент получит только
-                  проверенное и качественное оборудование для шитья, которое
-                  обеспечит долгую и бесперебойную работу
+            <div class="about__cards">
+              <div class="about__card">
+                <svg width="54" height="51" viewBox="0 0 54 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.0578 13.2568H14.2076C11.3748 13.2568 9.95909 13.2568 8.81033 13.7718C7.7977 14.2257 6.93502 14.9568 6.32046 15.8802C5.62328 16.9279 5.3889 18.3235 4.9232 21.1157L2.17795 37.5752L2.17685 37.5813C1.54905 41.3453 1.23499 43.2283 1.78045 44.6958C2.25936 45.9843 3.17649 47.064 4.36959 47.7479C5.72917 48.5271 7.63904 48.5271 11.4616 48.5271H42.184C46.0065 48.5271 47.9195 48.5271 49.2791 47.7479C50.4722 47.064 51.3871 45.9843 51.8661 44.6958C52.4113 43.2289 52.0974 41.3468 51.4701 37.5857L51.4676 37.5752L48.7224 21.1157C48.2567 18.3236 48.0236 16.9279 47.3264 15.8802C46.7118 14.9568 45.8485 14.2257 44.8358 13.7718C43.6871 13.2568 42.2723 13.2568 39.4395 13.2568H38.5885M15.0578 13.2568H38.5885M15.0578 13.2568C15.0578 6.76369 20.3253 1.5 26.8232 1.5C33.321 1.5 38.5885 6.76369 38.5885 13.2568"
+                    stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <h3>Широкий ассортимент товаров для шитья</h3>
+                <p>
+                  Оборудование и материалы для любых задач — от хобби до
+                  профессионального шитья
                 </p>
               </div>
-              <div class="about__cards">
-                <div class="about__card">
-                  <svg
-                    width="54"
-                    height="51"
-                    viewBox="0 0 54 51"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15.0578 13.2568H14.2076C11.3748 13.2568 9.95909 13.2568 8.81033 13.7718C7.7977 14.2257 6.93502 14.9568 6.32046 15.8802C5.62328 16.9279 5.3889 18.3235 4.9232 21.1157L2.17795 37.5752L2.17685 37.5813C1.54905 41.3453 1.23499 43.2283 1.78045 44.6958C2.25936 45.9843 3.17649 47.064 4.36959 47.7479C5.72917 48.5271 7.63904 48.5271 11.4616 48.5271H42.184C46.0065 48.5271 47.9195 48.5271 49.2791 47.7479C50.4722 47.064 51.3871 45.9843 51.8661 44.6958C52.4113 43.2289 52.0974 41.3468 51.4701 37.5857L51.4676 37.5752L48.7224 21.1157C48.2567 18.3236 48.0236 16.9279 47.3264 15.8802C46.7118 14.9568 45.8485 14.2257 44.8358 13.7718C43.6871 13.2568 42.2723 13.2568 39.4395 13.2568H38.5885M15.0578 13.2568H38.5885M15.0578 13.2568C15.0578 6.76369 20.3253 1.5 26.8232 1.5C33.321 1.5 38.5885 6.76369 38.5885 13.2568"
-                      stroke="white"
-                      stroke-width="3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <h3>Широкий ассортимент товаров для шитья</h3>
-                  <p>
-                    Оборудование и материалы для любых задач — от хобби до
-                    профессионального шитья
-                  </p>
-                </div>
-                <div class="about__card">
-                  <svg
-                    width="47"
-                    height="52"
-                    viewBox="0 0 47 52"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M31.2025 17.6896L20.4016 28.4826L15.0011 23.0861M44.7036 20.8332C44.7036 38.556 31.2887 46.5017 25.6016 49.0741L25.5945 49.0772C24.9964 49.3477 24.6965 49.4834 24.0168 49.6C23.5864 49.6738 22.6199 49.6738 22.1895 49.6C21.5071 49.4829 21.2042 49.3468 20.6013 49.0741C14.9142 46.5018 1.5 38.556 1.5 20.8331V10.135C1.5 7.11263 1.5 5.60033 2.08861 4.44595C2.60637 3.43053 3.43194 2.60557 4.4481 2.08819C5.60332 1.5 7.11672 1.5 10.1413 1.5H36.0634C39.088 1.5 40.5981 1.5 41.7534 2.08819C42.7695 2.60557 43.5978 3.43053 44.1156 4.44595C44.7036 5.5992 44.7036 7.10967 44.7036 10.1261V20.8332Z"
-                      stroke="white"
-                      stroke-width="3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <h3>Безопасность и долговечность</h3>
-                  <p>
-                    Работаем с проверенными брендами и гарантируем долговечность
-                    продукции
-                  </p>
-                </div>
-                <div class="about__card">
-                  <svg
-                    width="41"
-                    height="51"
-                    viewBox="0 0 41 51"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M38.8606 49.5C38.8606 39.1907 30.4971 30.8333 20.1803 30.8333C9.86345 30.8333 1.5 39.1907 1.5 49.5M20.1803 22.8333C14.2849 22.8333 9.50583 18.0577 9.50583 12.1667C9.50583 6.27563 14.2849 1.5 20.1803 1.5C26.0756 1.5 30.8547 6.27563 30.8547 12.1667C30.8547 18.0577 26.0756 22.8333 20.1803 22.8333Z"
-                      stroke="white"
-                      stroke-width="3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <h3>Профессиональная консультация и обслуживание</h3>
-                  <p>
-                    Помогаем с выбором и сопровождаем на всех этапах покупки
-                  </p>
-                </div>
+              <div class="about__card">
+                <svg width="47" height="52" viewBox="0 0 47 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M31.2025 17.6896L20.4016 28.4826L15.0011 23.0861M44.7036 20.8332C44.7036 38.556 31.2887 46.5017 25.6016 49.0741L25.5945 49.0772C24.9964 49.3477 24.6965 49.4834 24.0168 49.6C23.5864 49.6738 22.6199 49.6738 22.1895 49.6C21.5071 49.4829 21.2042 49.3468 20.6013 49.0741C14.9142 46.5018 1.5 38.556 1.5 20.8331V10.135C1.5 7.11263 1.5 5.60033 2.08861 4.44595C2.60637 3.43053 3.43194 2.60557 4.4481 2.08819C5.60332 1.5 7.11672 1.5 10.1413 1.5H36.0634C39.088 1.5 40.5981 1.5 41.7534 2.08819C42.7695 2.60557 43.5978 3.43053 44.1156 4.44595C44.7036 5.5992 44.7036 7.10967 44.7036 10.1261V20.8332Z"
+                    stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <h3>Безопасность и долговечность</h3>
+                <p>
+                  Работаем с проверенными брендами и гарантируем долговечность
+                  продукции
+                </p>
+              </div>
+              <div class="about__card">
+                <svg width="41" height="51" viewBox="0 0 41 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M38.8606 49.5C38.8606 39.1907 30.4971 30.8333 20.1803 30.8333C9.86345 30.8333 1.5 39.1907 1.5 49.5M20.1803 22.8333C14.2849 22.8333 9.50583 18.0577 9.50583 12.1667C9.50583 6.27563 14.2849 1.5 20.1803 1.5C26.0756 1.5 30.8547 6.27563 30.8547 12.1667C30.8547 18.0577 26.0756 22.8333 20.1803 22.8333Z"
+                    stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <h3>Профессиональная консультация и обслуживание</h3>
+                <p>
+                  Помогаем с выбором и сопровождаем на всех этапах покупки
+                </p>
               </div>
             </div>
           </div>
-        </section>
-        <section class="goods">
+        </div>
+      </section>
+      <section class="goods">
+        <div class="container">
+          <div class="goods_wrapp">
+            <div class="goods__title">
+              <h2>Популярные категории товаров</h2>
+              <a href="#">Все товары</a>
+            </div>
+            <div class="goods__swiperReviews swiper reviews-slider">
+              <div class="goods__swiperWrapp swiper-wrapper">
+                <div class="goods__swiperSlide swiper-slide"
+                  style="background-image: url(img/main/catalogPreviewCard1.png);"><a href="#">Кнопки</a></div>
+                <div class="goods__swiperSlide swiper-slide"
+                  style="background-image: url(img/main/catalogPreviewCard2.png);"><a href="#">Люверсы</a></div>
+                <div class="goods__swiperSlide swiper-slide"
+                  style="background-image: url(img/main/catalogPreviewCard3.png);"><a href="#">Нитки</a></div>
+                <div class="goods__swiperSlide swiper-slide"
+                  style="background-image: url(img/main/catalogPreviewCard1.png);"><a href="#">Кнопки</a></div>
+                <div class="goods__swiperSlide swiper-slide"
+                  style="background-image: url(img/main/catalogPreviewCard2.png);"><a href="#">Кнопки</a></div>
+              </div>
+              <div class="goods__swiperPagination swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="materialsGuide">
+        <div class="materialsGuide__wrapp">
+          <div class="materialsGuide__img">
+            <img src="img/main/materialsGuide.png" alt="">
+            <svg width="45" height="72" viewBox="0 0 45 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0L45 0L45 71.2921L22.5 49.0449L0 71.2921L0 0Z" fill="#78B473" />
+            </svg>
+          </div>
           <div class="container">
-            <div class="goods_wrapp">
-              <div class="goods__title">
-                <h2>Популярные категории товаров</h2>
-                <a href="#">Все товары</a>
+            <div class="materialsGuide__desc">
+              <h3>Ткани и фурнитура:
+                что важно знать при выборе</h3>
+              <p>Качество готового изделия напрямую зависит от правильно подобранных материалов. Ткани различаются по
+                составу, плотности и способу переплетения нитей — от этого зависят их прочность, износостойкость,
+                внешний
+                вид и удобство в уходе. Натуральные ткани хорошо «дышат», синтетические отличаются прочностью и
+                эластичностью, а смесовые варианты удачно сочетают свойства обоих типов.
+                Не менее важна и швейная фурнитура. Нитки, молнии, пуговицы, кнопки и декоративные элементы должны
+                соответствовать ткани по прочности и назначению. Правильно подобранная фурнитура облегчает процесс
+                пошива
+                и делает изделие аккуратным, удобным и долговечным.
+                Зная базовые особенности материалов, вы сможете быстрее подобрать оптимальное решение для любого проекта
+                —
+                от повседневной одежды до интерьерного текстиля</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="form " id="form" style="background-image: url('img/main/backgroundform.png')">
+        <div class="container">
+          <div class="form__wrapp">
+            <div class="form__left">
+              <h3 class="form__topTitle">Бесплатная консультация</h3>
+              <div class="form__inner">
+                <form action="">
+                  <div class="form__form">
+                    <div class="form__field">
+                      <label for="name" class="form__label">Ваше Имя</label>
+                      <input type="email" class="form__input" requierd />
+                    </div>
+                    <div class="form__field">
+                      <label for="tel" class="form__label">Номер телефона</label>
+                      <input type="text" class="form__input" requierd />
+                    </div>
+                  </div>
+                </form>
+                <button class="btn-reset">Отправить</button>
               </div>
-              <div class="goods__swiperReviews swiper reviews-slider">
-                <div class="goods__swiperWrapp swiper-wrapper">
-                  <div class="goods__swiperSlide swiper-slide"><img src="img/main/catalogPreviewCard1.png" alt=""></div>
-                  <div class="goods__swiperSlide swiper-slide"><img src="img/main/catalogPreviewCard2.png" alt=""></div>
-                  <div class="goods__swiperSlide swiper-slide"><img src="img/main/catalogPreviewCard3.png" alt=""></div>
-                  <div class="goods__swiperSlide swiper-slide"><img src="img/main/catalogPreviewCard1.png" alt=""></div>
-                  <div class="goods__swiperSlide swiper-slide"><img src="img/main/catalogPreviewCard2.png" alt=""></div>
-                  <div class="goods__swiperSlide swiper-slide"><img src="img/main/catalogPreviewCard3.png" alt=""></div>
+            </div>
+            <div class="form__right">
+              <div class="form__rightWrapp">
+                <div class="form__rightDesc">
+                  <h3>Выберите удобный формат</h3>
+                  <p>Вы можете оставить заявку на консультацию или самостоятельно посмотреть ассортимент в каталоге</p>
                 </div>
-                <div class="goods__swiperPagination swiper-pagination"></div>
+                <button>Смотреть каталог</button>
               </div>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+    </main>
 
-      @include('partials/footer.html')
-    </div>
-  </body>
+    @include('partials/footer.html')
+  </div>
+</body>
+
 </html>
