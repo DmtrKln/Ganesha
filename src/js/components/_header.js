@@ -26,3 +26,45 @@ burger?.addEventListener('click', () => {
 menuLinks.forEach(link => {
   link.addEventListener('click', closeMenu);
 });
+
+const modals = document.querySelectorAll('.header__modal');
+const formModal = document.querySelector('.header__modal[data-modal="form"]');
+const successModal = document.querySelector('.header__modal[data-modal="success"]');
+const modalForm = document.querySelector('[data-modal-form]');
+const headerBtn = document.querySelector('.header__btn');
+
+const openModal = (modal) => {
+  if (!modal) return;
+  modals.forEach((m) => m.classList.remove(ACTIVE_CLASS));
+  modal.classList.add(ACTIVE_CLASS);
+  document.body.classList.add('overflow');
+};
+
+const closeModal = () => {
+  modals.forEach((m) => m.classList.remove(ACTIVE_CLASS));
+  document.body.classList.remove('overflow');
+};
+
+headerBtn?.addEventListener('click', (e) => {
+  e.preventDefault();
+  closeMenu();
+  openModal(formModal);
+});
+
+modals.forEach((modal) => {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target.closest('[data-modal-close]')) {
+      closeModal();
+    }
+  });
+});
+
+modalForm?.addEventListener('submit', (e) => {
+  e.preventDefault();
+  modalForm.reset();
+  openModal(successModal);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});

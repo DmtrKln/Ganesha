@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+
+  <body class="page__body">
+    <div class="site-container">
+      @include('partials/header.html')
+
+      <main class="main">
+        <section class="catalogBanner">
+          <img
+            src="img/main/catalogBanner.png"
+            class="catalogBanner__img"
+            alt="Швейная мастерская"
+          />
+        </section>
+
+        <section class="catalog">
+          <div class="container">
+            <nav class="catalog__breadcrumbs" aria-label="Хлебные крошки">
+              <a href="index.html">Главная</a>
+              <span>&rarr;</span>
+              <a href="catalog.html">Каталог</a>
+            </nav>
+
+            <div class="catalog__wrapp">
+              <aside class="catalog__aside">
+                <button
+                  type="button"
+                  class="catalog__toggle btn-reset"
+                  aria-expanded="false"
+                  aria-controls="catalog-categories"
+                >
+                  <span>Категории</span>
+                  <svg
+                    width="14"
+                    height="9"
+                    viewBox="0 0 14 9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1.5L7 7.5L13 1.5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <ul id="catalog-categories" class="catalog__categories">
+                  <li><a href="#" class="catalog__category">Кнопки</a></li>
+                  <li>
+                    <a
+                      href="#"
+                      class="catalog__category catalog__category--active"
+                      >Люверсы</a
+                    >
+                  </li>
+                  <li><a href="#" class="catalog__category">Нитки</a></li>
+                  <li><a href="#" class="catalog__category">Молнии</a></li>
+                  <li><a href="#" class="catalog__category">Пуговицы</a></li>
+                  <li><a href="#" class="catalog__category">Иглы</a></li>
+                  <li><a href="#" class="catalog__category">Ножницы</a></li>
+                  <li><a href="#" class="catalog__category">Ленты</a></li>
+                  <li><a href="#" class="catalog__category">Резинки</a></li>
+                  <li><a href="#" class="catalog__category">Косая бейка</a></li>
+                  <li><a href="#" class="catalog__category">Кружево</a></li>
+                  <li><a href="#" class="catalog__category">Аппликации</a></li>
+                </ul>
+              </aside>
+
+              <div class="catalog__content">
+                <div class="catalog__head">
+                  <h1 class="catalog__title">Каталог швейной фурнитуры</h1>
+                  <p class="catalog__subtitle">
+                    Полный ассортимент фурнитуры для шитья, ремонта и
+                    производства одежды
+                  </p>
+                </div>
+
+                <div class="catalog__cards">
+                  <article class="catalog__card">
+                    <img
+                      src="img/main/catalogPreviewCard1.png"
+                      class="catalog__cardImg"
+                      alt="Кнопки"
+                    />
+                    <h3 class="catalog__cardTitle">Кнопки</h3>
+                    <p class="catalog__cardDesc">
+                      Кнопки для одежды, аксессуаров и текстиля
+                    </p>
+                    <a href="#" class="catalog__cardLink">Подробнее</a>
+                  </article>
+
+                  <article class="catalog__card">
+                    <img
+                      src="img/main/catalogPreviewCard2.png"
+                      class="catalog__cardImg"
+                      alt="Люверсы"
+                    />
+                    <h3 class="catalog__cardTitle">Люверсы</h3>
+                    <p class="catalog__cardDesc">
+                      Люверсы для укрепления отверстий в ткани и коже
+                    </p>
+                    <a href="#" class="catalog__cardLink">Подробнее</a>
+                  </article>
+
+                  <article class="catalog__card">
+                    <img
+                      src="img/main/catalogPreviewCard3.png"
+                      class="catalog__cardImg"
+                      alt="Нитки"
+                    />
+                    <h3 class="catalog__cardTitle">Нитки</h3>
+                    <p class="catalog__cardDesc">
+                      Нитки для шитья, ремонта и производства одежды
+                    </p>
+                    <a href="#" class="catalog__cardLink">Подробнее</a>
+                  </article>
+
+                  <article class="catalog__card">
+                    <img
+                      src="img/main/catalogPreviewCard1.png"
+                      class="catalog__cardImg"
+                      alt="Кнопки"
+                    />
+                    <h3 class="catalog__cardTitle">Кнопки</h3>
+                    <p class="catalog__cardDesc">
+                      Кнопки для одежды, аксессуаров и текстиля
+                    </p>
+                    <a href="#" class="catalog__cardLink">Подробнее</a>
+                  </article>
+
+                  <article class="catalog__card">
+                    <img
+                      src="img/main/catalogPreviewCard2.png"
+                      class="catalog__cardImg"
+                      alt="Люверсы"
+                    />
+                    <h3 class="catalog__cardTitle">Люверсы</h3>
+                    <p class="catalog__cardDesc">
+                      Люверсы для укрепления отверстий в ткани и коже
+                    </p>
+                    <a href="#" class="catalog__cardLink">Подробнее</a>
+                  </article>
+
+                  <article class="catalog__card">
+                    <img
+                      src="img/main/catalogPreviewCard3.png"
+                      class="catalog__cardImg"
+                      alt="Нитки"
+                    />
+                    <h3 class="catalog__cardTitle">Нитки</h3>
+                    <p class="catalog__cardDesc">
+                      Нитки для шитья, ремонта и производства одежды
+                    </p>
+                    <a href="#" class="catalog__cardLink">Подробнее</a>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="form" id="form">
+          <div class="container">
+            <div class="form__wrapp">
+              <div class="form__left">
+                <h3 class="form__topTitle">Бесплатная консультация</h3>
+                <div class="form__inner">
+                  <form action="">
+                    <div class="form__form">
+                      <div class="form__field">
+                        <label for="name" class="form__label">Ваше имя</label>
+                        <input
+                          id="name"
+                          type="text"
+                          class="form__input"
+                          required
+                        />
+                      </div>
+                      <div class="form__field">
+                        <label for="tel" class="form__label"
+                          >Номер телефона</label
+                        >
+                        <input
+                          id="tel"
+                          type="tel"
+                          class="form__input"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </form>
+                  <button class="btn-reset" type="button">Отправить</button>
+                </div>
+              </div>
+              <div class="form__right">
+                <div class="form__rightWrapp">
+                  <div class="form__rightDesc">
+                    <h3>Выберите удобный формат</h3>
+                    <p>
+                      Оставьте заявку на консультацию или самостоятельно
+                      посмотрите ассортимент в каталоге.
+                    </p>
+                  </div>
+                  <a href="catalog.html">Смотреть каталог</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="map">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae9a7dcd6498929cf838f1d63786563b0639393c7502a72abce94992cf846cabc&amp;source=constructor"
+            width="1280"
+            height="700"
+            frameborder="0"
+          ></iframe>
+        </section>
+      </main>
+
+      @include('partials/footer.html')
+    </div>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+.catalogBanner {
+  padding-top: 81px;
+  background-color: $dark-grey;
+
+  @include mobile {
+    padding-top: 71px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+
+    @include tablet {
+      height: 320px;
+    }
+
+    @include mobile {
+      height: 260px;
+    }
+  }
+}
+
+.catalog {
+  padding: 40px 0 100px;
+  background-color: $dark-grey;
+
+  @include mobile {
+    padding: 24px 0 50px;
+  }
+
+  &__breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 45px;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+    color: $light-grey;
+
+    @include mobile {
+      display: none;
+    }
+
+    a {
+      color: $light-grey;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
+  &__wrapp {
+    display: grid;
+    grid-template-columns: minmax(0, 390px) minmax(0, 1fr);
+    gap: 50px;
+    align-items: start;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @include mobile {
+      gap: 24px;
+    }
+  }
+
+  &__aside {
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__toggle {
+    display: none;
+
+    @include mobile {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 5px;
+      padding: 10px 16px;
+      background-color: $green;
+      font-family: $font-family;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 110%;
+      color: $white;
+      cursor: pointer;
+    }
+
+    svg {
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &__aside--open &__toggle svg {
+    transform: rotate(180deg);
+  }
+
+  &__categories {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include mobile {
+      display: none;
+      margin-top: 14px;
+    }
+  }
+
+  &__aside--open &__categories {
+    @include mobile {
+      display: flex;
+    }
+  }
+
+  &__category {
+    display: block;
+    border-radius: 5px;
+    padding: 18px 28px;
+    background-color: #363636;
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 110%;
+    text-transform: uppercase;
+    color: $white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    @include mobile {
+      padding: 16px 22px;
+      font-size: 16px;
+    }
+
+    &:hover {
+      background-color: $green;
+    }
+
+    &--active {
+      background-color: $green;
+    }
+  }
+
+  &__head {
+    margin-bottom: 50px;
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 22px;
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 110%;
+    color: $white;
+
+    @include mobile {
+      margin-bottom: 16px;
+      font-size: 28px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 540px;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 135%;
+    color: $light-grey;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px 30px;
+
+    @include small-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px 20px;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__cardImg {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 22px;
+    border-radius: 5px;
+    object-fit: cover;
+
+    @include mobile {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__cardTitle {
+    margin-bottom: 14px;
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 110%;
+    text-transform: uppercase;
+    color: $white;
+
+    @include mobile {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+  }
+
+  &__cardDesc {
+    margin-bottom: 18px;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 135%;
+    color: $light-grey;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__cardLink {
+    align-self: flex-end;
+    margin-top: auto;
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 110%;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: $green;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}

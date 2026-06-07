@@ -126,4 +126,100 @@
       </p>
     </div>
   </div>
+
+  <div
+    class="header__modal header__modal--form"
+    data-modal="form"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-form-title"
+  >
+    <div class="header__modalWrapp">
+      <button
+        type="button"
+        class="header__modalClose btn-reset"
+        data-modal-close
+        aria-label="Закрыть"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2 2L18 18M18 2L2 18"
+            stroke="#2c2c2c"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+      <h2 id="modal-form-title" class="header__modalTitle">
+        Бесплатная консультация
+      </h2>
+      <form class="header__modalForm" data-modal-form>
+        <div class="header__modalField">
+          <label for="modalName" class="header__modalLabel">Ваше Имя</label>
+          <input
+            id="modalName"
+            type="text"
+            class="header__modalInput"
+            required
+          />
+        </div>
+        <div class="header__modalField">
+          <label for="modalTel" class="header__modalLabel">Номер телефона</label>
+          <input
+            id="modalTel"
+            type="tel"
+            class="header__modalInput"
+            required
+          />
+        </div>
+        <button type="submit" class="header__modalBtn btn-reset">
+          Связаться с нами
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div
+    class="header__modal header__modal--success"
+    data-modal="success"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-success-title"
+  >
+    <div class="header__modalWrapp">
+      <button
+        type="button"
+        class="header__modalClose btn-reset"
+        data-modal-close
+        aria-label="Закрыть"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2 2L18 18M18 2L2 18"
+            stroke="#2c2c2c"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+      <h2
+        id="modal-success-title"
+        class="header__modalTitle header__modalTitle--center"
+      >
+        Заявка успешно отправлена
+      </h2>
+    </div>
+  </div>
 </header>
