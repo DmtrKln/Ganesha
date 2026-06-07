@@ -1,61 +1,46 @@
-const cardsAbout = document.querySelectorAll('.about__card');
+import Swiper, { Pagination } from 'swiper';
 
-const cards = () => {
-  cardsAbout.forEach((card, index) => {
-    if (index % 2 === 1) {
-      card.style.backgroundColor = '#78b473';
+Swiper.use([Pagination]);
+
+const slider = document.querySelector('.reviews-slider');
+
+if (slider) {
+  const updateSlides = swiper => {
+    swiper.slides.forEach(slide => {
+      slide.style.transform = 'scale(1)';
+    });
+
+    if (swiper.slides[swiper.activeIndex]) {
+      swiper.slides[swiper.activeIndex].style.transform = 'scale(1.13)';
     }
-  });
-};
+  };
 
-cards();
-
-// const reservationSwiper = new Swiper(".reservation__slider", {
-
-//   slidesPerView: 1,
-//   spaceBetween: 20,
-//   speed: 800,
-//   watchSlidesProgress: true,
-
-
-//   navigation: {
-//     prevEl: ".reservation__arrowLeft",
-//     nextEl: ".reservation__arrowRight",
-//   },
-
-//   breakpoints: {
-//     768: {
-//       slidesPerView: 2,
-//     },
-
-//   },
-
-
-// });
-const swiper = new Swiper('.reviews-slider', {
-  slidesPerView: 3,
-  centeredSlides: true,
-  loop: true,
-  spaceBetween: 60,
-
-  on: {
-    init() {
-      updateSlides(this);
+  new Swiper(slider, {
+    slidesPerView: 1,
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 20,
+    pagination: {
+      el: '.goods__swiperPagination',
+      clickable: true,
     },
-    slideChangeTransitionEnd() {
-      updateSlides(this);
-    }
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-});
-
-function updateSlides(swiper) {
-  swiper.slides.forEach(slide => {
-    slide.style.transform = 'scale(1)';
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 35,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 60,
+      },
+    },
+    on: {
+      init() {
+        updateSlides(this);
+      },
+      slideChangeTransitionEnd() {
+        updateSlides(this);
+      },
+    },
   });
-
-  swiper.slides[swiper.activeIndex].style.transform = 'scale(1.13)';
 }

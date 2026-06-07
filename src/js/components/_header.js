@@ -1,76 +1,28 @@
-// const header = document.querySelector('.header');
-// const burger = document.querySelector(".header__burger");
-// const burgerIcon = document.querySelector('.header__burgerIcon')
-// const SCROLLED_CLASS = "scrolled";
-// const mobileMenu = document.querySelector(".header__mobile");
+const header = document.querySelector('.header');
+const burger = document.querySelector('.header__burger');
+const mobileMenu = document.querySelector('.header__mobile');
+const menuLinks = document.querySelectorAll('.header__mobile a');
+const SCROLLED_CLASS = 'scrolled';
+const ACTIVE_CLASS = 'active';
 
-// // скролл
-// if (header) {
-//   window.addEventListener('scroll', () => {
-//     if (window.scrollY >= 10) {
-//       header.classList.add(SCROLLED_CLASS);
-//     }
-//     else {
-//       header.classList.remove(SCROLLED_CLASS);
-//     }
-//   })
-// }
+if (header) {
+  window.addEventListener('scroll', () => {
+    header.classList.toggle(SCROLLED_CLASS, window.scrollY >= 10);
+  });
+}
 
-// burger.addEventListener('click', () => {
-//   burgerIcon.classList.toggle('active');
-//   mobileMenu.classList.toggle('active');
-//   document.querySelector('body').classList.toggle('overflow');
-// });
+const closeMenu = () => {
+  burger?.classList.remove(ACTIVE_CLASS);
+  mobileMenu?.classList.remove(ACTIVE_CLASS);
+  document.body.classList.remove('overflow');
+};
 
+burger?.addEventListener('click', () => {
+  burger.classList.toggle(ACTIVE_CLASS);
+  mobileMenu?.classList.toggle(ACTIVE_CLASS);
+  document.body.classList.toggle('overflow');
+});
 
-
-// //модалка
-// const headerBtn = document.querySelector('.header__btn');
-// const headerBtnMobile = document.querySelector('.header__tellMobile');
-// const contactUs = document.querySelector('.contactUs');
-// const cross = document.querySelector('.contactUs__cross');
-// const contactUsOverlay = document.querySelector('.contactUs__overlay');
-
-// [headerBtn, headerBtnMobile, cross].forEach(btn => {
-//   btn?.addEventListener('click', () => {
-//     contactUs.classList.toggle('active');
-//     contactUsOverlay.classList.toggle('active');
-//     document.querySelector('body').classList.toggle('overflow');
-//     header.style.zIndex = '0';
-//   })
-// })
-
-// contactUsOverlay?.addEventListener('click', (e) =>{
-//   if(e.target === contactUsOverlay){
-//     contactUs.classList.remove('active');
-//     contactUsOverlay.classList.remove('active');
-//     document.querySelector('body').classList.remove('overflow');
-//     header.style.zIndex = '';
-//   }
-// })
-
-
-// //отправить
-
-// // const contactUsBtn = document.querySelector('.contactUs__btn');
-// // const success = document.querySelector('.success')
-// // const overlaySucces = document.querySelector('.success__overlay');
-// // const crossSucces = document.querySelector('.success__cross');
-
-
-
-// // [contactUsBtn, crossSucces].forEach(btn => {
-// //   btn?.addEventListener('click', () => {
-// //     success.classList.toggle('active');
-// //     overlaySucces.classList.toggle('active');
-// //     document.querySelector('body').classList.toggle('overflow');
-// //   })
-// // })
-
-// // overlaySucces?.addEventListener('click', (e) => {
-// //   if (e.target === overlaySucces) {
-// //     success.classList.remove('active');
-// //     overlaySucces.classList.remove('active');
-// //     document.querySelector('body').classList.remove('overflow');
-// //   }
-// // });
+menuLinks.forEach(link => {
+  link.addEventListener('click', closeMenu);
+});

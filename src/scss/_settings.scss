@@ -12,11 +12,11 @@ html {
 
 .page {
   height: 100%;
-  font-family: var(--font-family, sans-serif);
+  font-family: $font-family;
   -webkit-text-size-adjust: 100%;
-  color: var(--white);
+  color: $dark-grey;
   line-height: 1.4;
-  background: var(--dark);
+  background: $white;
 }
 
 h1,

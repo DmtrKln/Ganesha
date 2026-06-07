@@ -2,18 +2,13 @@
 // Рекомендуется создавать отдельный файл в папке components и подключать все там
 
 // Определение операционной системы на мобильных
-import { mobileCheck } from "./functions/mobile-check";
-console.log(mobileCheck());
+// import { mobileCheck } from "./functions/mobile-check";
 
 // Определение ширины экрана
 // import { isMobile, isTablet, isDesktop } from './functions/check-viewport';
-// if (isDesktop()) {
-//   console.log('...')
-// }
 
 // Троттлинг функции (для ресайза, ввода в инпут, скролла и т.д.)
-import { throttle } from "./functions/throttle";
-// let yourFunc = () => { console.log('throttle') };
+// import { throttle } from "./functions/throttle";
 // let func = throttle(yourFunc);
 // window.addEventListener('resize', func);
 
@@ -55,7 +50,7 @@ import { throttle } from "./functions/throttle";
 // const swiper = new Swiper(el, {
 //   slidesPerView: 'auto',
 // });
-import Swiper from "swiper/bundle";
+// import Swiper from "swiper/bundle";
 // const swiper = new Swiper(".mails__sliderr", {
 //   slidesPerView: 3,
 //   spaceBetween: 20,
@@ -103,18 +98,9 @@ import Swiper from "swiper/bundle";
 
 // Подключение событий свайпа на мобильных
 // import 'swiped-events';
-// document.addEventListener('swiped', function(e) {
-//   console.log(e.target);
-//   console.log(e.detail);
-//   console.log(e.detail.dir);
-// });
 
 // import { validateForms } from './functions/validate-forms';
 // const rules1 = [...];
-
-// const afterForm = () => {
-//   console.log('Произошла отправка, тут можно писать любые действия');
-// };
 
 // validateForms('.form-1', rules1, afterForm);
 

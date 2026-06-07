@@ -1,0 +1,109 @@
+.footer {
+  padding: 45px 0;
+  background-color: $dark-grey;
+
+  &__wrapp {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 35px;
+    align-items: start;
+    justify-content: space-between;
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      width: 31px;
+      height: 31px;
+    }
+
+    span {
+      font-family: $font3;
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 110%;
+      color: $white;
+    }
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    a {
+      font-family: $third-family;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 110%;
+      color: $white;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    a,
+    p {
+      font-family: $third-family;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: $white;
+    }
+
+    a {
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 14px;
+    justify-content: flex-end;
+
+    @include mobile {
+      justify-content: flex-start;
+    }
+
+    a {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      transition: border-color 0.3s ease, opacity 0.3s ease;
+
+      &:hover {
+        border-color: $green;
+        opacity: 0.8;
+      }
+    }
+  }
+}

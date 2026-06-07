@@ -3,23 +3,21 @@
   top: 0;
   z-index: 99999;
   width: 100%;
-  transition: 0.3s all ease;
-  padding: 25px 0 25px 0;
-
+  padding: 25px 0;
   background-color: $dark-grey;
 
-  @include mobile {
-    padding: 10px 0 10px 0;
+  @include maxdesktop{
+    padding: 25px 0 20px 0;
   }
 
   &.scrolled {
-    background-color: #111;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
   }
 
   &__wrap {
     display: grid;
-    grid-template-columns: auto 33% auto auto ;
-    column-gap: 20px;
+    grid-template-columns: auto minmax(330px, 470px) auto;
+    column-gap: 35px;
     align-items: center;
     justify-content: space-between;
 
@@ -30,27 +28,28 @@
 
   &__logo {
     display: flex;
+    align-items: center;
     gap: 10px;
+    color: $white;
 
     img {
-      display: flex;
-      align-items: center;
       width: 31px;
+      height: 31px;
       flex-shrink: 0;
     }
 
-    p {
+    span {
       font-family: $font3;
       font-weight: 400;
       font-size: 26px;
       line-height: 110%;
-      color: #fff;
+      color: $white;
     }
   }
 
   &__nav {
-    justify-self: center;
     width: 100%;
+    justify-self: center;
 
     @include maxdesktop {
       display: none;
@@ -61,31 +60,30 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 20px;
 
-    li {
-      list-style: none;
+    a {
+      font-family: $third-family;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 110%;
+      color: $white;
+      transition: color 0.3s ease;
 
-      a {
-        font-family: $third-family;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 110%;
-        color: $white;
-
-        &:hover {
-          color: $green;
-        }
+      &:hover {
+        color: $green;
       }
     }
   }
 
-  &__contact{
+  &__contact {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 30px;
+
+    @include maxdesktop {
+      display: none;
+    }
   }
 
   &__num {
@@ -94,444 +92,241 @@
     font-size: 16px;
     line-height: 110%;
     color: $white;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $green;
+    }
   }
 
   &__social {
     display: flex;
+    align-items: center;
     gap: 10px;
 
-    path {
-      transition: fill 0.3s ease;
-    }
+    a {
+      display: flex;
+      width: 34px;
+      height: 34px;
+      transition: opacity 0.3s ease;
 
-    a:hover path {
-      fill: $green;
-    }
-
-    @include maxdesktop {
-      display: none;
-    }
-  }
-
-  &__numReserv {
-    display: flex;
-    gap: 20px;
-
-    @include maxdesktop {
-      display: none;
+      &:hover {
+        opacity: 0.72;
+      }
     }
   }
-
-
 
   &__btn {
-    padding: 5px 15px;
-    color: $green;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $green;
+    border-radius: 50px;
+    padding: 7px 17px;
     font-family: $font-family;
     font-weight: 400;
     font-size: 16px;
-    background-color: transparent;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    border: 2px solid $green;
+    line-height: 110%;
+    color: $green;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
-      background-color: $white;
-      color: $green;
+      background-color: $green;
+      color: $white;
     }
 
     &:active {
-      background-color: #646464;
+      background-color: #505050;
+      border-color: #505050;
       color: $white;
     }
   }
 
+  &__burger {
+    display: none;
+    position: relative;
+    z-index: 100001;
+    width: 32px;
+    height: 26px;
 
+    @include maxdesktop {
+      display: grid;
+      place-items: center;
+      justify-self: end;
+    }
 
-//   &__burgerIcon {
-//     margin: auto;
-//     display: grid;
-//     place-items: center;
-//     width: 25px;
-//     height: 22px;
-//     cursor: pointer;
-//     overflow: hidden;
+    span {
+      display: block;
+      margin-right: auto;
+      width: 24px;
+      height: 2px;
+      background-color: $white;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
 
-//     span {
-//       width: 22px;
-//       height: 1px;
-//       display: block;
-//       background-color: $white;
-//       transition: all 0.3s ease;
-//       justify-self: end;
-//     }
+    span:nth-child(3) {
+      width: 14px;
+      height: 2px;
+    } 
 
-//     span:nth-child(1) {
-//       width: 11px;
-//     }
+    &.active {
+      span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
 
-//     span:nth-child(2) {
-//       width: 22px;
-//     }
+      span:nth-child(2) {
+        opacity: 0;
+      }
 
-//     span:nth-child(3) {
-//       width: 16px;
-//     }
-//   }
+      span:nth-child(3) {
+        width: 24px;
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
 
-//   &__burgerIcon.active {
-//     span:nth-child(1) {
-//       transform-origin: center center;
-//       transform: rotate(-45deg) translate(-20%, 500%);
-//       width: 25px;
-//     }
+  &__mobile {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: 100000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100dvh;
+    padding: 95px 25px 45px;
+    background-color: $dark-grey;
+    transition: top 0.3s ease;
 
-//     span:nth-child(2) {
-//       transform: translateX(40px);
-//     }
+    &.active {
+      top: 0;
+    }
+  }
 
-//     span:nth-child(3) {
-//       transform-origin: center center;
-//       transform: rotate(45deg) translate(-20%, -500%);
-//       width: 25px;
-//     }
-//   }
+  &__mobileTitle {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 44px;
 
-//   &__mobile {
-//     position: fixed;
-//     left: 0;
-//     padding: 30px 40px 50px 40px;
-//     z-index: 9999;
-//     background-color: $black;
-//     top: -100%;
-//     width: 100%;
-//     height: 100dvh;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     gap: 35px;
-//     transition: 0.3 all ease;
+    gap: 5px;
 
-//     &.active {
-//       top: 0;
-//     }
-//   }
+    h2 {
+      font-family: $font3;
+      font-weight: 400;
+      font-size: 47px;
+      line-height: 110%;
+      color: #fff;
+    }
 
-//   &__mobileMenu {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     gap: 15px;
+    h3 {
+      font-family: $second-family;
+      text-align: center;
+      font-weight: 300;
+      font-size: 19px;
+      line-height: 100%;
+      color: #b8b8b8;
+    }
+  }
 
-//     li a {
-//       font-family: $font-family;
-//       font-weight: 400;
-//       font-size: 22px;
-//       text-align: center;
-//       color: $white;
-//     }
-//   }
+  &__mobileMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-//   &__mobileBtn {
-//     padding: 6px 30px;
-//     font-family: $font-family;
-//     font-weight: 400;
-//     font-size: 18px;
-//     color: $white;
-//     background-color: $pink;
-//     border-radius: 10px;
-//     transition: all 0.3s ease;
+    margin-bottom: 70px;
+    gap: 20px;
 
-//     &:hover {
-//       background-color: $white;
-//       color: $pink;
-//     }
+    li a {
+      font-family: $third-family;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 110%;
+      color: $white;
+    }
+  }
 
-//     &:active {
-//       background-color: #646464;
-//       color: $white;
-//     }
-//   }
+  &__mobileContact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-//   &__mobileContact {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     gap: 20px;
-//   }
+    gap: 25px;
+    margin-bottom: 80px;
 
-//   &__mobileSocial {
-//     display: flex;
-//     gap: 15px;
+    a {
+      font-family: $second-family;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      color: #fff;
+    }
 
-//     path {
-//       transition: fill 0.3s ease;
-//     }
+    p {
+      font-family: $second-family;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+      text-align: center;
+      color: #fff;
+    }
+  }
 
-//     a:active path {
-//       fill: $pink;
-//     }
-//   }
+  &__mobileSocial {
+    display: flex;
+    position: relative;
+    padding-bottom: 32px;
+    gap: 20px;
 
-//   &__mobileTel {
-//     font-family: $font-family;
-//     font-weight: 600;
-//     font-size: 16px;
-//     text-align: center;
-//     color: $white;
+    text-align: center;
+    width: fit-content;
 
-//     gap: 10px;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw; 
+      height: 2px;
+      background: #434244;
+      bottom: 0;
+    }
+  }
 
-//     &:active {
-//       color: $pink;
-//     }
-//   }
+  &__mobileCopyright {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 25px;
 
-//   &__mobileAddress {
-//     font-family: $font-family;
-//     font-weight: 400;
-//     font-size: 16px;
-//     text-align: center;
-//     color: $white;
-//   }
-// }
+    p {
+      font-family: $second-family;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 100%;
+      text-align: center;
+      color: #fff;
+    }
+  }
 
-// //модалка  -> забронировать
-// .contactUs__overlay {
-//   position: fixed;
-//   inset: 0;
-//   background: rgba(0, 0, 0, 0.5);
-//   opacity: 0;
-//   visibility: hidden;
-//   transition: opacity 0.25s, visibility 0.25s;
-//   z-index: 1000;
+  &__mobileSvg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-//   &.active {
-//     opacity: 1;
-//     visibility: visible;
-//   }
-// }
+    border: 2px solid $light-grey;
+    border-radius: 40px;
+    width: 40px;
+    height: 40px;
 
-// .contactUs {
-//   display: none;
-//   position: fixed;
-//   top: 0;
-//   right: 0;
-//   box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.1);
-//   background: #1a1a1a;
-//   border: 1px solid $white;
-//   border-radius: 30px;
-//   max-width: 660px;
-//   max-height: 660px;
-//   overflow-y: auto;
-//   max-height: 100vh;
-//   width: 90%;
-//   max-width: 660px;
+    &:hover{
+      border: 2px solid $green;
 
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-
-//   z-index: 9999;
-
-//   &__wrapp {
-//     padding: 40px;
-//     position: relative;
-//   }
-
-//   &__form {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 25px;
-
-//     button {
-//       background-color: $pink;
-//       width: 100%;
-//       font-family: $font-family;
-//       font-weight: 700;
-//       font-size: 18px;
-//       color: $white;
-//       padding: 17px 0;
-//       border-radius: 14px;
-//       transition: all 0.3s ease;
-
-//       &:hover {
-//         background-color: $white;
-//         color: $pink;
-//       }
-
-//       &:active {
-//         background-color: #646464;
-//         color: $white;
-//       }
-//     }
-//   }
-
-//   &__formTitle {
-//     h2 {
-//       font-family: $font-family;
-//       font-weight: 500;
-//       font-size: 36px;
-//       color: $pink;
-
-//       @include mobile {
-//         font-size: 26px;
-//       }
-//     }
-
-//     p {
-//       font-family: $font-family;
-//       font-weight: 700;
-//       font-size: 22px;
-//       line-height: 150%;
-//       color: #dfdfdf;
-//       margin-bottom: 25px;
-
-//       @include mobile {
-//         font-weight: 400;
-//         font-size: 18px;
-//         line-height: 150%;
-//       }
-//     }
-//   }
-
-//   &__cross {
-//     position: absolute;
-//     top: 40px;
-//     right: 40px;
-//     z-index: 99999;
-//   }
-
-//   &__group {
-//     display: flex;
-//     gap: 15px;
-//     justify-content: space-between;
-//     margin-bottom: 10px;
-
-//     @include maxdesktop {
-//       flex-direction: column;
-//       gap: 10px;
-//     }
-//   }
-
-//   &__field {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 15px;
-
-//     @include maxdesktop {
-//       gap: 10px;
-//     }
-//   }
-
-//   &__label {
-//     font-family: $font-family;
-//     font-weight: 600;
-//     font-size: 18px;
-//     color: #bbb;
-//   }
-
-//   &__input {
-//     font-family: $font-family;
-//     font-weight: 400;
-//     font-size: 18px;
-//     color: #6f6f6f;
-//     border: 1px solid #e5e7eb;
-//     border-radius: 12px;
-//     padding: 13px 16px;
-//     box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.1);
-//     background: #1a1a1a;
-//   }
-
-//   &__input::placeholder {
-//     font-family: $font-family;
-//     font-weight: 600;
-//     font-size: 18px;
-//     color: #bbb;
-//   }
-
-//   textarea {
-//     padding: 14px 0 104px 16px;
-//     height: 140px;
-//   }
-
-//   &.active {
-//     display: block;
-//   }
-// }
-
-// .success__overlay {
-//   position: fixed;
-//   inset: 0;
-//   background: rgba(0, 0, 0, 0.5);
-//   opacity: 0;
-//   visibility: hidden;
-//   transition: opacity 0.25s, visibility 0.25s;
-//   z-index: 1000;
-
-//   &.active {
-//     opacity: 1;
-//     visibility: visible;
-//   }
-// }
-
-// .success {
-//   display: none;
-//   position: fixed;
-//   align-items: center;
-//   justify-content: center;
-//   inset: 0;
-//   z-index: 999999;
-
-//   &__wrapp {
-//     text-align: center;
-//     box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.1);
-//     background: #1a1a1a;
-//     border: 1px solid $white;
-//     border-radius: 30px;
-//     max-width: 660px;
-//     max-height: 335px;
-//     max-height: 100vh;
-//     width: 90%;
-//     padding: 70px 0 85px 0;
-//     z-index: 9999;
-//     position: relative;
-//   }
-
-//   img {
-//     width: 235px;
-//     margin-bottom: 25px;
-
-//     @include mobile {
-//       width: 185px;
-//       margin-bottom: 20px;
-//     }
-//   }
-
-//   h2 {
-//     font-family: $font-family;
-//     font-weight: 500;
-//     font-size: 40px;
-//     text-align: center;
-//     color: $pink;
-
-//     @include mobile {
-//       font-size: 30px;
-//     }
-//   }
-
-//   &.active {
-//     display: flex;
-//   }
-
-//   &__cross {
-//     position: absolute;
-//     top: 35px;
-//     right: 40px;
-
-//     @include mobile {
-//       top: 30px;
-//       right: 30px;
-//     }
-//   }
+      svg path{
+        fill: $green;
+      }
+    }
+  }
 }

@@ -51,7 +51,6 @@
 //           if (afterSend) {
 //             afterSend();
 //           }
-//           console.log('Отправлено');
 //         }
 //       }
 //     }

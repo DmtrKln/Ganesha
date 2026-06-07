@@ -1,33 +1,79 @@
 .hero {
-  background-color: $dark-grey;
-  padding: 280px 0 240px 0;
   position: relative;
-
   overflow: hidden;
+  padding: 280px 0 235px;
+  background-color: $dark-grey;
+
+
+  @include tablet {
+    padding: 76px 0 45px;
+  }
+
+  @include mobile {
+    padding: 135px 0 60px;
+  }
+
+  &__imgMobile{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transform: rotate(-14deg);
+
+    @include tablet{
+      opacity: 1;
+      visibility: visible;
+      position: relative;
+    }
+  }
 
   &__img {
     position: absolute;
-    max-width: 60%;
-    top: 0;
+    bottom: 0;
     right: 0;
+    width: 61vw;
+    max-width: 958px;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+
+    @include tablet {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+    }
   }
 
   &__wrapp {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
-    gap: 80px;
     align-items: flex-start;
+    gap: 78px;
+
+    @include mobile {
+      gap: 38px;
+    }
 
     a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      padding: 18px 60px;
+      background-color: $green;
       font-family: $font-family;
       font-weight: 600;
       font-size: 24px;
       line-height: 110%;
-      color: #fff;
-      padding: 18px 60px;
-      background: $green;
-      border-radius: 10px;
-      transition: all 0.3s ease;
+      color: $white;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      @include mobile {
+        width: 100%;
+        padding: 16px 24px;
+        font-size: 18px;
+      }
 
       &:hover {
         background-color: $white;
@@ -36,7 +82,7 @@
 
       &:active {
         background-color: #505050;
-        color: $light-grey;
+        color: $white;
       }
     }
   }
@@ -44,48 +90,92 @@
   &__desc {
     display: flex;
     flex-direction: column;
-    gap: 30px;
     align-items: flex-start;
+    gap: 30px;
     max-width: 750px;
+
+    @include tablet {
+      max-width: 630px;
+    }
+
+    @include mobile {
+      gap: 20px;
+    }
 
     h1 {
       font-family: $font-family;
       font-weight: 500;
       font-size: 60px;
       line-height: 110%;
-      color: #fff;
+      color: $white;
+
+      @include tablet {
+        font-size: 48px;
+      }
+
+      @include mobile {
+        font-size: 32px;
+      }
     }
 
     h2 {
       font-family: $font-family;
       font-weight: 400;
       font-size: 24px;
-      line-height: 110%;
-      color: #fff;
+      line-height: 135%;
+      color: $white;
+
+      @include mobile {
+        font-size: 18px;
+      }
     }
   }
 }
 
 .catalogPreview {
-  padding: 60px 0 75px 0;
+  padding: 60px 0 75px;
+  background-color: $white;
+
+  @include mobile {
+    padding: 45px 0 55px;
+  }
 
   &__item {
     display: flex;
-    gap: 20px;
-    justify-content: start;
+    gap: 10px;
     margin-bottom: 40px;
 
-    a {
-      align-self: flex-start;
-      padding: 15px 160px 15px 20px;
-      background: $dark-grey;
-      border-radius: 5px;
+    @include tablet {
+      flex-wrap: wrap;
+    }
 
+    @media (max-width: 666px) {
+      justify-content: center;
+    }
+
+    @include mobile {
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    a {
+      min-width: 310px;
+      border-radius: 5px;
+      padding: 15px 20px;
+      background-color: $dark-grey;
       font-family: $font-family;
       font-weight: 600;
       font-size: 20px;
       line-height: 110%;
       color: $white;
+
+      @include mobile {
+        font-size: 18px;
+      }
+
+      &:hover {
+        background-color: $green;
+      }
     }
   }
 
@@ -95,33 +185,59 @@
     gap: 20px;
 
     img {
-      border-radius: 5px;
       width: calc((100% - 40px) / 3);
+      aspect-ratio: 444 / 395;
+      border-radius: 5px;
+
+      @include tablet {
+        width: calc((100% - 20px) / 2);
+      }
+
+      @include mobile {
+        width: 100%;
+      }
     }
   }
 }
 
 .about {
-  padding: 70px 0 115px 0;
+  padding: 70px 0 115px;
+  background-color: $white;
+
+  @include mobile {
+    padding: 45px 0 65px;
+  }
 
   &__wrapp {
     display: flex;
     flex-direction: column;
     gap: 65px;
+
+    @include mobile {
+      gap: 38px;
+    }
   }
 
   &__top {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 36px;
+
+    @include mobile {
+      gap: 22px;
+    }
 
     h2 {
+      max-width: 690px;
       font-family: $font-family;
       font-weight: 600;
       font-size: 40px;
       line-height: 110%;
       color: $dark-grey;
-      max-width: 675px;
+
+      @include mobile {
+        font-size: 28px;
+      }
     }
   }
 
@@ -130,15 +246,25 @@
     font-weight: 600;
     font-size: 22px;
     line-height: 110%;
+    text-transform: uppercase;
     color: $dark-grey;
+
+    @include mobile {
+      font-size: 18px;
+    }
   }
 
   &__desc {
+    max-width: 1180px;
     font-family: $font-family;
     font-weight: 400;
     font-size: 20px;
-    line-height: 110%;
+    line-height: 150%;
     color: $dark-grey;
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
 
   &__cards {
@@ -149,12 +275,15 @@
 
   &__card {
     position: relative;
-
-    background: $dark-grey;
-    border-radius: 5px;
-    padding: 0 45px 60px 20px;
-
     width: calc((100% - 40px) / 3);
+    min-height: 320px;
+    border-radius: 5px;
+    padding: 0 45px 50px 20px;
+    background-color: $dark-grey;
+
+    &:nth-child(2) {
+      background-color: $green;
+    }
 
     @include tablet {
       width: calc((100% - 20px) / 2);
@@ -162,54 +291,65 @@
 
     @include small-tablet {
       width: 100%;
-
-      padding: 0 35px 30px 15px;
-    }
-
-    h3 {
-      margin-top: 120px;
-
-      font-family: $font-family;
-      font-weight: 700;
-      font-size: 20px;
-      line-height: 110%;
-      color: $white;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-family: $font-family;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 110%;
-      color: $white;
+      min-height: 260px;
+      padding: 0 35px 35px 15px;
     }
 
     svg {
       position: absolute;
       top: 40px;
       right: 55px;
-
-      width: 43px;
-      height: 48px;
+      width: 54px;
+      height: 52px;
 
       @include small-tablet {
-        width: 36px;
-        height: 34px;
+        top: 28px;
+        right: 25px;
+        width: 42px;
+        height: 42px;
       }
+    }
+
+    h3 {
+      margin-top: 120px;
+      margin-bottom: 20px;
+      font-family: $font-family;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 125%;
+      color: $white;
+
+      @include small-tablet {
+        margin-top: 100px;
+      }
+    }
+
+    p {
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 145%;
+      color: $white;
     }
   }
 }
 
 .goods {
-
+  padding: 95px 0 65px;
   background-color: $dark-grey;
-  padding: 95px 0 0 0;
+
+  @include mobile {
+    padding: 60px 0 45px;
+  }
 
   &__wrapp {
     display: flex;
     flex-direction: column;
     gap: 50px;
+
+    @include mobile {
+      gap: 30px;
+    }
   }
 
   &__title {
@@ -217,15 +357,24 @@
     justify-content: space-between;
     gap: 20px;
 
+    @include mobile {
+      flex-direction: column;
+    }
+
     h2 {
       font-family: $font-family;
       font-weight: 600;
       font-size: 40px;
       line-height: 110%;
       color: $white;
+
+      @include mobile {
+        font-size: 28px;
+      }
     }
 
     a {
+      align-self: flex-start;
       font-family: $font-family;
       font-weight: 600;
       font-size: 24px;
@@ -233,52 +382,58 @@
       text-decoration: underline;
       text-decoration-style: dotted;
       color: $green;
+
+      @include mobile {
+        font-size: 18px;
+      }
     }
   }
 
   &__swiperReviews {
     width: 100%;
-    padding: 87px 0;
+    padding: 70px 0 90px;
+
+    @include mobile {
+      padding: 20px 0 55px;
+    }
   }
 
   .swiper-slide {
-    height: 465px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
     width: 390px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 2.77px solid #fff;
-    border-radius: 5px;
-
-    background: #2c2c2c;
+    height: 465px;
+    border: 2px solid $white;
     border-radius: 10px;
-
+    background-color: #2c2c2c;
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
+    opacity: 0.55;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 
-    display: flex;
-    align-items: end;
-    justify-content: center;
-
-    transition: all 0.4s ease;
-    opacity: 0.5;
+    @include small-tablet {
+      width: 300px;
+      height: 360px;
+    }
 
     a {
-      text-align: center;
-      background: $white;
-      max-width: 305px;
-      width: 100%;
-      padding: 16px 20px;
-      border-radius: 5px;
+      width: calc(100% - 84px);
       margin-bottom: 28px;
-
+      border-radius: 5px;
+      padding: 16px 20px;
+      background-color: $white;
       font-family: $font-family;
       font-weight: 600;
       font-size: 18px;
       line-height: 110%;
+      text-align: center;
       color: $dark-grey;
+
+      @include small-tablet {
+        width: calc(100% - 40px);
+      }
     }
   }
 
@@ -288,24 +443,56 @@
 
   .swiper-slide-prev,
   .swiper-slide-next {
-    opacity: 0.8;
+    opacity: 0.82;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: $white;
+    opacity: 0.45;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $green;
+    opacity: 1;
   }
 }
 
 .materialsGuide {
-
-  background: $dark-grey;
+  background-color: $dark-grey;
 
   &__wrapp {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax(360px, 809px) minmax(0, 1fr);
     gap: 70px;
+    align-items: stretch;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: 42px;
+    }
+  }
+
+  &__container {
+    padding-left: 0;
+
+    @include tablet {
+      padding-left: var(--container-offset);
+    }
   }
 
   &__img {
-    align-self: flex-start;
     position: relative;
-    max-width: 810px;
+    align-self: start;
+
+    img {
+      width: 100%;
+      min-height: 516px;
+      object-fit: cover;
+
+      @include tablet {
+        min-height: 0;
+      }
+    }
 
     svg {
       position: absolute;
@@ -315,18 +502,30 @@
   }
 
   &__desc {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    max-width: 525px;
+    justify-content: flex-end;
+    gap: 32px;
+    max-width: 560px;
+    min-height: 516px;
+    padding: 70px 0 55px;
+
+    @include tablet {
+      max-width: 100%;
+      min-height: 0;
+      padding: 0 0 60px;
+    }
 
     h3 {
       font-family: $font-family;
       font-weight: 600;
       font-size: 40px;
       line-height: 110%;
-      color: #fff;
+      color: $white;
+
+      @include mobile {
+        font-size: 28px;
+      }
     }
 
     p {
@@ -334,100 +533,127 @@
       font-weight: 400;
       font-size: 20px;
       line-height: 150%;
-      color: var(--white);
+      color: $white;
+
+      @include mobile {
+        font-size: 16px;
+      }
     }
   }
 }
 
 .form {
+  padding: 158px 0 85px;
+  background-color: $white;
 
-  padding: 158px 0 0 0;
+  @include tablet {
+    padding: 90px 0 70px;
+  }
+
+  @include mobile {
+    padding: 60px 0 50px;
+  }
 
   &__wrapp {
     display: flex;
     flex-wrap: wrap;
   }
 
+  &__left,
+  &__right {
+    border: 1px solid $dark-grey;
+    border-radius: 5px;
+  }
+
   &__left {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: flex-start;
     flex-direction: column;
-
-    border: 1px solid #fff;
-    border-radius: 5px;
-
-    background: #fff;
-
-    padding: 70px 50px 70px 67px;
-    max-width: 785px;
+    align-items: flex-start;
+    justify-content: center;
     width: 57%;
+    max-width: 785px;
+    padding: 70px 50px 70px 67px;
+    background-color: $white;
+
+    @include tablet {
+      width: 100%;
+      max-width: none;
+      padding: 45px 35px;
+    }
+
+    @include mobile {
+      padding: 32px 18px;
+    }
   }
 
   &__right {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-
-    border: 1px solid #fff;
-    border-radius: 5px;
-
-    background: $dark-grey;
-
-    padding: 100px 20px 100px 135px;
-    max-width: 590px;
+    justify-content: center;
     width: 43%;
+    max-width: 590px;
+    padding: 100px 20px 100px 135px;
+    background-color: $dark-grey;
 
-    button {
-      border: 1px solid #fff;
-      border-radius: 5px;
-      padding: 12px 50px;
+    @include tablet {
+      width: 100%;
+      max-width: none;
+      padding: 45px 35px;
+    }
 
-      font-family: $font-family;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 110%;
-      color: #fff;
-      background-color: transparent;
+    @include mobile {
+      padding: 32px 18px;
     }
   }
 
   &__topTitle {
+    margin-bottom: 45px;
     font-family: $font-family;
     font-weight: 600;
     font-size: 40px;
     line-height: 110%;
     color: #000;
-    margin-bottom: 45px;
+
+    @include mobile {
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
   }
 
   &__inner {
-    width: 100%;
-
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     button {
-
+      align-self: flex-start;
       border-radius: 5px;
-      padding: 12px 20px;
-      max-width: 252px;
-
-      background: $dark-grey;
       padding: 12px 80px;
-
+      background-color: $dark-grey;
       font-family: $font-family;
       font-weight: 500;
       font-size: 18px;
       line-height: 110%;
-      color: #fff;
+      color: $white;
+      transition: background-color 0.3s ease;
 
+      @include mobile {
+        width: 100%;
+      }
+
+      &:hover {
+        background-color: $green;
+      }
     }
   }
 
   form {
+    width: 100%;
     margin-bottom: 45px;
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
   }
 
   &__form {
@@ -451,27 +677,44 @@
   }
 
   &__input {
+    width: 100%;
+    height: 50px;
     border: 1px solid $dark-grey;
     border-radius: 5px;
+    padding: 10px 15px;
+    background-color: $white;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 18px;
+    color: $dark-grey;
+    outline: none;
 
-    height: 50px;
-    width: 100%;
+    &:focus {
+      border-color: $green;
+    }
   }
 
   &__rightDesc {
-    max-width: 345px;
-    margin-bottom: 40px;
-
     display: flex;
     flex-direction: column;
     gap: 30px;
+    max-width: 345px;
+    margin-bottom: 40px;
+
+    @include tablet {
+      max-width: 620px;
+    }
 
     h3 {
       font-family: $font-family;
       font-weight: 600;
       font-size: 40px;
       line-height: 110%;
-      color: #fff
+      color: $white;
+
+      @include mobile {
+        font-size: 28px;
+      }
     }
 
     p {
@@ -480,6 +723,37 @@
       font-size: 20px;
       line-height: 150%;
       color: $white;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__rightWrapp {
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $white;
+      border-radius: 5px;
+      padding: 12px 50px;
+      font-family: $font-family;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 110%;
+      color: $white;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      @include mobile {
+        width: 100%;
+        padding: 12px 20px;
+      }
+
+      &:hover {
+        background-color: $white;
+        color: $dark-grey;
+      }
     }
   }
 }
