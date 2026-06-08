@@ -1,46 +1,81 @@
-import Swiper, { Pagination } from 'swiper';
+const cardsAbout = document.querySelectorAll('.about__card');
 
-Swiper.use([Pagination]);
-
-const slider = document.querySelector('.reviews-slider');
-
-if (slider) {
-  const updateSlides = swiper => {
-    swiper.slides.forEach(slide => {
-      slide.style.transform = 'scale(1)';
-    });
-
-    if (swiper.slides[swiper.activeIndex]) {
-      swiper.slides[swiper.activeIndex].style.transform = 'scale(1.13)';
+const cards = () => {
+  cardsAbout.forEach((card, index) => {
+    if (index % 2 === 1) {
+      card.style.backgroundColor = '#78b473';
     }
-  };
-
-  new Swiper(slider, {
-    slidesPerView: 1,
-    centeredSlides: true,
-    loop: true,
-    spaceBetween: 20,
-    pagination: {
-      el: '.goods__swiperPagination',
-      clickable: true,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 35,
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 60,
-      },
-    },
-    on: {
-      init() {
-        updateSlides(this);
-      },
-      slideChangeTransitionEnd() {
-        updateSlides(this);
-      },
-    },
   });
+};
+
+cards();
+
+const swiper = new Swiper('.reviews-slider', {
+  slidesPerView: 1,
+  centeredSlides: true,
+  loop: true,
+  spaceBetween: 60,
+
+  breakpoints: {
+    400: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1200: {
+      slidesPerView: 3,
+    },
+
+  },
+
+  on: {
+    init() {
+      updateSlides(this);
+    },
+    slideChangeTransitionEnd() {
+      updateSlides(this);
+    }
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+
+function updateSlides(swiper) {
+  swiper.slides.forEach(slide => {
+    slide.style.transform = 'scale(1)';
+  });
+
+  if (window.innerWidth > 760){
+    swiper.slides[swiper.activeIndex].style.transform = 'scale(1.13)';
+  }
+
 }
+
+
+
+const catalogPreview = new Swiper(".catalogPreview__cards", {
+
+  slidesPerView: 1.3,
+  spaceBetween: 15,
+  speed: 800,
+  watchSlidesProgress: true,
+  loop: true,
+
+
+  breakpoints: {
+    768: {
+      slidesPerView: 2.3,
+    },
+    1200: {
+      slidesPerView: 3.3,
+      spaceBetween: 20,
+    },
+
+  },
+
+
+});
+

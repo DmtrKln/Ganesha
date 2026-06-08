@@ -1,25 +1,26 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 280px 0 235px;
+  padding: 280px 0 240px;
   background-color: $dark-grey;
 
 
   @include tablet {
-    padding: 76px 0 45px;
+    padding: 0 0 45px;
   }
 
   @include mobile {
-    padding: 135px 0 60px;
+    padding: 0 0 60px;
   }
 
-  &__imgMobile{
+  &__imgMobile {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    transform: rotate(-14deg);
 
-    @include tablet{
+    width: 100%;
+
+    @include tablet {
       opacity: 1;
       visibility: visible;
       position: relative;
@@ -49,10 +50,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 78px;
+    gap: 80px;
 
     @include mobile {
-      gap: 38px;
+      gap: 35px;
     }
 
     a {
@@ -71,7 +72,7 @@
 
       @include mobile {
         width: 100%;
-        padding: 16px 24px;
+        padding: 21px 24px;
         font-size: 18px;
       }
 
@@ -99,7 +100,11 @@
     }
 
     @include mobile {
-      gap: 20px;
+      gap: 35px;
+    }
+
+    @media (max-width: 313px) {
+      max-width: 313px;
     }
 
     h1 {
@@ -122,7 +127,7 @@
       font-family: $font-family;
       font-weight: 400;
       font-size: 24px;
-      line-height: 135%;
+      line-height: 110%;
       color: $white;
 
       @include mobile {
@@ -133,33 +138,46 @@
 }
 
 .catalogPreview {
-  padding: 60px 0 75px;
   background-color: $white;
 
-  @include mobile {
-    padding: 45px 0 55px;
+
+  &__wrapp {
+    padding: 62px 0 0 0;
+
+    position: relative;
+
+    @include tablet {
+      margin: 0;
+    }
+
+    @include mobile {
+      padding: 22px 0 0 0;
+    }
   }
+
+
 
   &__item {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 40px;
 
     @include tablet {
       flex-wrap: wrap;
     }
 
-    @media (max-width: 666px) {
+    @media (max-width: 576px) {
       justify-content: center;
     }
 
     @include mobile {
+      padding: 0 52px 0 52px;
       gap: 12px;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
 
     a {
-      min-width: 310px;
+      width: 255px;
       border-radius: 5px;
       padding: 15px 20px;
       background-color: $dark-grey;
@@ -182,7 +200,6 @@
   &__cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
 
     img {
       width: calc((100% - 40px) / 3);
@@ -201,22 +218,33 @@
 }
 
 .about {
-  padding: 70px 0 115px;
   background-color: $white;
 
+  margin: 74px 0 114px;
+
   @include mobile {
-    padding: 45px 0 65px;
+    margin: 0 0 40px 0;
   }
 
+
   &__wrapp {
+
+    position: relative;
+
     display: flex;
     flex-direction: column;
     gap: 65px;
 
+    @include tablet {
+      margin: 0;
+    }
+
     @include mobile {
-      gap: 38px;
+      padding: 70px 0 0;
+      gap: 20px;
     }
   }
+
 
   &__top {
     display: flex;
@@ -224,11 +252,11 @@
     gap: 36px;
 
     @include mobile {
-      gap: 22px;
+      gap: 19px;
     }
 
     h2 {
-      max-width: 690px;
+      max-width: 730px;
       font-family: $font-family;
       font-weight: 600;
       font-size: 40px;
@@ -236,30 +264,30 @@
       color: $dark-grey;
 
       @include mobile {
-        font-size: 28px;
+        font-size: 26px;
       }
     }
   }
 
   &__title {
     font-family: $font-family;
-    font-weight: 600;
+    font-weight: 550;
     font-size: 22px;
     line-height: 110%;
     text-transform: uppercase;
     color: $dark-grey;
 
     @include mobile {
-      font-size: 18px;
+      font-size: 14px;
     }
   }
 
   &__desc {
-    max-width: 1180px;
+    max-width: 1130px;
     font-family: $font-family;
     font-weight: 400;
     font-size: 20px;
-    line-height: 150%;
+    line-height: 110%;
     color: $dark-grey;
 
     @include mobile {
@@ -316,7 +344,7 @@
       font-family: $font-family;
       font-weight: 700;
       font-size: 20px;
-      line-height: 125%;
+      line-height: 110%;
       color: $white;
 
       @include small-tablet {
@@ -328,14 +356,14 @@
       font-family: $font-family;
       font-weight: 400;
       font-size: 16px;
-      line-height: 145%;
+      line-height: 110%;
       color: $white;
     }
   }
 }
 
 .goods {
-  padding: 95px 0 65px;
+  padding: 95px 0 0 0;
   background-color: $dark-grey;
 
   @include mobile {
@@ -345,21 +373,13 @@
   &__wrapp {
     display: flex;
     flex-direction: column;
-    gap: 50px;
 
-    @include mobile {
-      gap: 30px;
-    }
   }
 
   &__title {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-
-    @include mobile {
-      flex-direction: column;
-    }
+    align-items: center;
 
     h2 {
       font-family: $font-family;
@@ -369,11 +389,15 @@
       color: $white;
 
       @include mobile {
+        margin-bottom: 35px;
         font-size: 28px;
+        order: 1;
       }
     }
 
     a {
+
+
       align-self: flex-start;
       font-family: $font-family;
       font-weight: 600;
@@ -383,18 +407,23 @@
       text-decoration-style: dotted;
       color: $green;
 
+      align-self: center;
+
       @include mobile {
         font-size: 18px;
+        order: 3;
       }
     }
   }
 
   &__swiperReviews {
     width: 100%;
-    padding: 70px 0 90px;
+    padding: 87px 0 68px;
 
     @include mobile {
+      margin-bottom: 22px;
       padding: 20px 0 55px;
+      order: 2;
     }
   }
 
@@ -460,29 +489,35 @@
 .materialsGuide {
   background-color: $dark-grey;
 
+  position: relative;
+
   &__wrapp {
-    display: grid;
-    grid-template-columns: minmax(360px, 809px) minmax(0, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+
     gap: 70px;
-    align-items: stretch;
+  }
+
+  &__notVisibleBlock {
+    width: calc(40% - 70px);
 
     @include tablet {
-      grid-template-columns: 1fr;
-      gap: 42px;
+      width: 100%;
     }
   }
 
   &__container {
     padding-left: 0;
-
-    @include tablet {
-      padding-left: var(--container-offset);
-    }
   }
 
   &__img {
-    position: relative;
-    align-self: start;
+    position: absolute;
+    left: 0;
+    top: 138px;
+
+    @include tablet {
+      display: none;
+    }
 
     img {
       width: 100%;
@@ -501,14 +536,36 @@
     }
   }
 
+  &__imgMobile {
+    display: none;
+    position: relative;
+
+    @include tablet {
+      display: block;
+    }
+
+    svg {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
   &__desc {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    gap: 32px;
-    max-width: 560px;
+    gap: 46px;
+    max-width: 766px;
     min-height: 516px;
-    padding: 70px 0 55px;
+    padding: 138px 0 0 0;
+
+    width: calc(60% - 70px);
+
+    @include tablet {
+      margin-left: 0;
+      width: 100%;
+
+    }
 
     @include tablet {
       max-width: 100%;
@@ -518,7 +575,7 @@
 
     h3 {
       font-family: $font-family;
-      font-weight: 600;
+      font-weight: 550;
       font-size: 40px;
       line-height: 110%;
       color: $white;
@@ -543,8 +600,8 @@
 }
 
 .form {
-  padding: 158px 0 85px;
-  background-color: $white;
+  padding: 158px 0 158px;
+  background-color: $dark-grey;
 
   @include tablet {
     padding: 90px 0 70px;
@@ -557,6 +614,7 @@
   &__wrapp {
     display: flex;
     flex-wrap: wrap;
+    border: 1px solid #fff;
   }
 
   &__left,
@@ -575,10 +633,10 @@
     padding: 70px 50px 70px 67px;
     background-color: $white;
 
-    @include tablet {
+    @include maxdesktop {
       width: 100%;
       max-width: none;
-      padding: 45px 35px;
+      padding: 27px 18px 25px 21px;
     }
 
     @include mobile {
@@ -595,15 +653,12 @@
     padding: 100px 20px 100px 135px;
     background-color: $dark-grey;
 
-    @include tablet {
+    @include maxdesktop {
       width: 100%;
       max-width: none;
-      padding: 45px 35px;
+      padding: 58px 18px 76px 21px;
     }
 
-    @include mobile {
-      padding: 32px 18px;
-    }
   }
 
   &__topTitle {
@@ -754,6 +809,16 @@
         background-color: $white;
         color: $dark-grey;
       }
+    }
+  }
+}
+
+.map {
+  &__wrapp {
+
+    iframe {
+      border: none;
+      width: 100vw;
     }
   }
 }

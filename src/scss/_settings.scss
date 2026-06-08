@@ -116,6 +116,12 @@ a {
   box-sizing: border-box;
   max-width: var(--container-width);
   width: 100%;
+
+  &.swiperContainer {
+    @include mobile {
+      padding: 0 !important;
+    }
+  }
 }
 
 .js-focus-visible :focus:not(.focus-visible) {

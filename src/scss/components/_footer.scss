@@ -1,31 +1,6 @@
 .footer {
   background-color: $dark-grey;
 
-  &__map {
-    position: relative;
-    width: 100%;
-    height: 420px;
-    overflow: hidden;
-
-    @include tablet {
-      height: 320px;
-    }
-
-    @include mobile {
-      height: 280px;
-    }
-
-    // !important нужен, чтобы перебить inline width/height embed-кода Яндекс.Карт / 2ГИС
-    iframe,
-    img {
-      display: block !important;
-      width: 100% !important;
-      height: 100% !important;
-      max-width: none !important;
-      border: 0 !important;
-      object-fit: cover;
-    }
-  }
 
   &__wrapp {
     border-top: 1px solid $green;
