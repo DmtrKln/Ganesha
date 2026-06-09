@@ -115,12 +115,23 @@
   }
 
   &__bottom {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
     padding: 30px 0 0 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.08);
+    }
 
     @include mobile {
       flex-direction: column;

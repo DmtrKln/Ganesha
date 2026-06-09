@@ -133,6 +133,14 @@
   }
 }
 
+.swiperContainer {
+  @include mobile {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+  }
+}
+
 .catalogPreview {
   background-color: $white;
 
@@ -192,6 +200,7 @@
   &__cards {
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
 
     img {
       width: calc((100% - 40px) / 3);
@@ -497,20 +506,21 @@
     opacity: 1.1;
   }
 
-  .bullet-prev,
-  .bullet-next {
+  // Динамическая пагинация (dynamicBullets: true)
+  // Swiper сам ставит scale: 1 → 0.66 → 0.33 на active-main / active-prev/next / active-prev-prev/next-next
+  --swiper-pagination-bullet-size: 30px;
+  --swiper-pagination-bullet-horizontal-gap: 6px;
+  --swiper-pagination-color: #fff;
+  --swiper-pagination-bullet-inactive-color: #5c5c5c;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+
+  @include mobile {
+    --swiper-pagination-bullet-size: 22px;
+  }
+
+  .swiper-pagination-bullet-active-prev,
+  .swiper-pagination-bullet-active-next {
     background-color: #b3b0b0;
-    transform: scale(1.1);
-  }
-
-  .swiper-pagination-bullet {
-    background-color: #5c5c5c;
-    transform: scale(1);
-  }
-
-  .swiper-pagination-bullet-active {
-    background-color: #fff;
-    transform: scale(1.3);
   }
 }
 
