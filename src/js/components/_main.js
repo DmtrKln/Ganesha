@@ -29,30 +29,13 @@ const swiper = new Swiper('.reviews-slider', {
 
   },
 
-  on: {
-    init() {
-      updateSlides(this);
-    },
-    slideChangeTransitionEnd() {
-      updateSlides(this);
-    }
-  },
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
   },
+
+  
 });
-
-function updateSlides(swiper) {
-  swiper.slides.forEach(slide => {
-    slide.style.transform = 'scale(1)';
-  });
-
-  if (window.innerWidth > 760){
-    swiper.slides[swiper.activeIndex].style.transform = 'scale(1.13)';
-  }
-
-}
 
 
 
@@ -78,4 +61,7 @@ const catalogPreview = new Swiper(".catalogPreview__cards", {
 
 
 });
+
+
+
 

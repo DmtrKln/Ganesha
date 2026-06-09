@@ -7,8 +7,9 @@
   }
 
   &__img {
+    display: block;
     width: 100%;
-    height: 440px;
+    height: 455px;
     object-fit: cover;
 
     @include tablet {
@@ -16,62 +17,69 @@
     }
 
     @include mobile {
-      height: 260px;
+      height: 240px;
     }
   }
 }
 
 .catalog {
-  padding: 40px 0 100px;
+  padding: 60px 0 100px;
   background-color: $dark-grey;
 
   @include mobile {
-    padding: 24px 0 50px;
+    padding: 16px 0 50px;
   }
 
   &__breadcrumbs {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 45px;
+    margin-bottom: 37px;
     font-family: $font-family;
     font-weight: 400;
     font-size: 16px;
-    line-height: 110%;
-    color: $light-grey;
+    line-height: 140%;
+    color: $white;
 
     @include mobile {
       display: none;
     }
 
     a {
-      color: $light-grey;
+      color: $white;
       transition: color 0.3s ease;
 
       &:hover {
         color: $green;
       }
     }
+
+    span {
+      color: $white;
+    }
   }
 
   &__wrapp {
-    display: grid;
-    grid-template-columns: minmax(0, 390px) minmax(0, 1fr);
-    gap: 50px;
-    align-items: start;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    gap: 63px;
 
     @include tablet {
-      grid-template-columns: 1fr;
-      gap: 40px;
+      flex-direction: column;
+
     }
 
     @include mobile {
-      gap: 24px;
+      gap: 28px;
     }
   }
 
   &__aside {
-    @include mobile {
+    flex-shrink: 0;
+    width: 401px;
+
+    @include tablet {
       width: 100%;
     }
   }
@@ -79,7 +87,7 @@
   &__toggle {
     display: none;
 
-    @include mobile {
+    @include tablet {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -94,70 +102,97 @@
       cursor: pointer;
     }
 
+    h2 {
+      font: inherit;
+      color: inherit;
+    }
+
     svg {
       flex-shrink: 0;
       transition: transform 0.3s ease;
     }
   }
 
-  &__aside--open &__toggle svg {
+  &__active &__toggle svg {
     transform: rotate(180deg);
   }
 
   &__categories {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    background: #353535;
+    border-radius: 5px;
 
-    @include mobile {
-      display: none;
+    @include tablet {
+      opacity: 0;
+      position: absolute;
+      left: -110%;
+      transition: all 0.3s ease;
+      visibility: hidden;
+      transition: all 0.3 ease;
+
+      width: 280px;
       margin-top: 14px;
     }
-  }
 
-  &__aside--open &__categories {
-    @include mobile {
-      display: flex;
+    &.active {
+      opacity: 1;
+      left: 0;
+      visibility: visible;
+    }
+
+    li {
+      padding: 15px 30px;
+
+      @include mobile {
+        padding: 10px 21px;
+      }
+
+      &:hover {
+        background-color: $green;
+      }
+
+      &--active {
+        background-color: $green;
+      }
     }
   }
+
 
   &__category {
     display: block;
-    border-radius: 5px;
-    padding: 18px 28px;
-    background-color: #363636;
     font-family: $font-family;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px;
-    line-height: 110%;
+    line-height: 100%;
     text-transform: uppercase;
     color: $white;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease;
 
     @include mobile {
-      padding: 16px 22px;
       font-size: 16px;
     }
 
-    &:hover {
-      background-color: $green;
-    }
+  }
 
-    &--active {
-      background-color: $green;
-    }
+  &__content {
+    flex: 1;
+    min-width: 0;
   }
 
   &__head {
-    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 46px;
 
     @include mobile {
-      margin-bottom: 24px;
+      gap: 22px;
+      margin-bottom: 34px;
     }
   }
 
   &__title {
-    margin-bottom: 22px;
     font-family: $font-family;
     font-weight: 600;
     font-size: 40px;
@@ -165,8 +200,7 @@
     color: $white;
 
     @include mobile {
-      margin-bottom: 16px;
-      font-size: 28px;
+      font-size: 26px;
     }
   }
 
@@ -175,39 +209,44 @@
     font-family: $font-family;
     font-weight: 400;
     font-size: 20px;
-    line-height: 135%;
-    color: $light-grey;
+    line-height: 110%;
+    color: $white;
 
     @include mobile {
       font-size: 16px;
+      line-height: 20px;
     }
   }
 
   &__cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 45px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px 38px;
 
-    @include small-tablet {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 35px 20px;
-    }
 
     @include mobile {
-      grid-template-columns: 1fr;
-      gap: 30px;
+      gap: 48px;
     }
   }
 
   &__card {
     display: flex;
     flex-direction: column;
+    width: calc((100% - 76px) / 3);
+
+    @include small-tablet {
+      width: calc((100% - 24px) / 2);
+    }
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__cardImg {
     width: 100%;
-    aspect-ratio: 1 / 1;
-    margin-bottom: 22px;
+    aspect-ratio: 277 / 330;
+    margin-bottom: 16px;
     border-radius: 5px;
     object-fit: cover;
 
@@ -220,44 +259,40 @@
     margin-bottom: 14px;
     font-family: $font-family;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 110%;
     text-transform: uppercase;
-    color: $white;
+    color: #fff;
 
     @include mobile {
       margin-bottom: 10px;
-      font-size: 18px;
     }
   }
 
   &__cardDesc {
-    margin-bottom: 18px;
+    margin-bottom: 25px;
     font-family: $font-family;
     font-weight: 400;
     font-size: 16px;
-    line-height: 135%;
-    color: $light-grey;
-
-    @include mobile {
-      font-size: 14px;
-    }
+    line-height: 110%;
+    color: $white;
+    opacity: 0.6;
   }
 
   &__cardLink {
-    align-self: flex-end;
-    margin-top: auto;
     font-family: $font-family;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
     line-height: 110%;
     text-decoration: underline;
     text-decoration-style: dotted;
     color: $green;
     transition: opacity 0.3s ease;
+    text-align: right;
 
     &:hover {
       opacity: 0.75;
     }
   }
 }
+

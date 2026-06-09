@@ -1,16 +1,12 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 280px 0 240px;
+  padding: 280px 0 240px 0;
   background-color: $dark-grey;
 
 
   @include tablet {
     padding: 0 0 45px;
-  }
-
-  @include mobile {
-    padding: 0 0 60px;
   }
 
   &__imgMobile {
@@ -131,7 +127,7 @@
       color: $white;
 
       @include mobile {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
   }
@@ -142,16 +138,12 @@
 
 
   &__wrapp {
-    padding: 62px 0 0 0;
+    margin: 62px 0 0 0;
 
     position: relative;
 
-    @include tablet {
-      margin: 0;
-    }
-
     @include mobile {
-      padding: 22px 0 0 0;
+      margin: 22px 0 0 0;
     }
   }
 
@@ -172,7 +164,7 @@
 
     @include mobile {
       padding: 0 52px 0 52px;
-      gap: 12px;
+      gap: 14px;
       margin-bottom: 30px;
     }
 
@@ -188,7 +180,7 @@
       color: $white;
 
       @include mobile {
-        font-size: 18px;
+        font-size: 16px;
       }
 
       &:hover {
@@ -223,7 +215,7 @@
   margin: 74px 0 114px;
 
   @include mobile {
-    margin: 0 0 40px 0;
+    margin: 70px 0 40px 0;
   }
 
 
@@ -235,14 +227,11 @@
     flex-direction: column;
     gap: 65px;
 
-    @include tablet {
-      margin: 0;
-    }
-
     @include mobile {
-      padding: 70px 0 0;
       gap: 20px;
     }
+
+
   }
 
 
@@ -252,11 +241,11 @@
     gap: 36px;
 
     @include mobile {
-      gap: 19px;
+      gap: 20px;
     }
 
     h2 {
-      max-width: 730px;
+      max-width: 600px;
       font-family: $font-family;
       font-weight: 600;
       font-size: 40px;
@@ -299,14 +288,17 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+
+    @include mobile {
+      gap: 10px;
+    }
   }
 
   &__card {
     position: relative;
     width: calc((100% - 40px) / 3);
-    min-height: 320px;
     border-radius: 5px;
-    padding: 0 45px 50px 20px;
+    padding: 0 45px 60px 20px;
     background-color: $dark-grey;
 
     &:nth-child(2) {
@@ -319,8 +311,11 @@
 
     @include small-tablet {
       width: 100%;
-      min-height: 260px;
       padding: 0 35px 35px 15px;
+    }
+
+    @include mobile {
+      padding: 0 35px 28px 12px;
     }
 
     svg {
@@ -339,8 +334,7 @@
     }
 
     h3 {
-      margin-top: 120px;
-      margin-bottom: 20px;
+      margin: 120px 0 17px 0;
       font-family: $font-family;
       font-weight: 700;
       font-size: 20px;
@@ -350,6 +344,12 @@
       @include small-tablet {
         margin-top: 100px;
       }
+
+      @include mobile {
+        font-size: 16px;
+
+        margin: 75px 0 18px 0;
+      }
     }
 
     p {
@@ -358,16 +358,20 @@
       font-size: 16px;
       line-height: 110%;
       color: $white;
+
+      @include mobile {
+        font-size: 13px;
+      }
     }
   }
 }
 
 .goods {
-  padding: 95px 0 0 0;
+  padding: 88px 0 0 0;
   background-color: $dark-grey;
 
   @include mobile {
-    padding: 60px 0 45px;
+    padding: 60px 0 0 0;
   }
 
   &__wrapp {
@@ -383,36 +387,51 @@
 
     h2 {
       font-family: $font-family;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 40px;
       line-height: 110%;
       color: $white;
 
       @include mobile {
-        margin-bottom: 35px;
+        margin-bottom: 13px;
         font-size: 28px;
         order: 1;
       }
     }
+  }
 
-    a {
+  &__link {
+    align-self: flex-start;
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: $green;
+
+    align-self: center;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__mobileLink {
+
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 110%;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: $green;
 
 
-      align-self: flex-start;
-      font-family: $font-family;
-      font-weight: 600;
-      font-size: 24px;
-      line-height: 110%;
-      text-decoration: underline;
-      text-decoration-style: dotted;
-      color: $green;
+    display: none;
 
-      align-self: center;
-
-      @include mobile {
-        font-size: 18px;
-        order: 3;
-      }
+    @include tablet {
+      display: block;
     }
   }
 
@@ -423,7 +442,6 @@
     @include mobile {
       margin-bottom: 22px;
       padding: 20px 0 55px;
-      order: 2;
     }
   }
 
@@ -468,86 +486,95 @@
 
   .swiper-slide-active {
     opacity: 1;
+
+    @media (min-width: 761px) {
+      transform: scale(1.13);
+    }
   }
 
   .swiper-slide-prev,
   .swiper-slide-next {
-    opacity: 0.82;
+    opacity: 1.1;
+  }
+
+  .bullet-prev,
+  .bullet-next {
+    background-color: #b3b0b0;
+    transform: scale(1.1);
   }
 
   .swiper-pagination-bullet {
-    background-color: $white;
-    opacity: 0.45;
+    background-color: #5c5c5c;
+    transform: scale(1);
   }
 
   .swiper-pagination-bullet-active {
-    background-color: $green;
-    opacity: 1;
+    background-color: #fff;
+    transform: scale(1.3);
   }
 }
 
 .materialsGuide {
+  padding: 138px 0 0 0;
   background-color: $dark-grey;
 
-  position: relative;
+  @include mobile {
+    padding: 70px 0 0 0;
+  }
 
   &__wrapp {
     display: flex;
-    flex-wrap: wrap;
-
+    align-items: center;
     gap: 70px;
-  }
-
-  &__notVisibleBlock {
-    width: calc(40% - 70px);
 
     @include tablet {
-      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
     }
-  }
-
-  &__container {
-    padding-left: 0;
   }
 
   &__img {
-    position: absolute;
-    left: 0;
-    top: 138px;
+    position: relative;
+    flex-shrink: 0;
+    width: 809px;
+
+    @include laptop {
+      width: 50%;
+    }
 
     @include tablet {
-      display: none;
+      width: 100%;
     }
 
     img {
+      display: block;
       width: 100%;
-      min-height: 516px;
+      height: 516px;
       object-fit: cover;
+      aspect-ratio: 809 / 516;
 
       @include tablet {
-        min-height: 0;
+        display: none;
       }
     }
 
     svg {
       position: absolute;
       top: 0;
-      right: 0;
-    }
-  }
+      right: 40px;
+      width: 45px;
+      height: 72px;
 
-  &__imgMobile {
-    display: none;
-    position: relative;
+      @include tablet {
+        display: none;
+      }
 
-    @include tablet {
-      display: block;
-    }
-
-    svg {
-      position: absolute;
-      top: 0;
-      right: 0;
+      @include mobile {
+        right: 24px;
+        width: 36px;
+        height: 58px;
+      }
     }
   }
 
@@ -556,32 +583,30 @@
     flex-direction: column;
     gap: 46px;
     max-width: 766px;
-    min-height: 516px;
-    padding: 138px 0 0 0;
-
-    width: calc(60% - 70px);
-
-    @include tablet {
-      margin-left: 0;
-      width: 100%;
-
-    }
+    padding-right: 18px;
 
     @include tablet {
       max-width: 100%;
-      min-height: 0;
-      padding: 0 0 60px;
+      padding-right: 0;
+      padding-left: 18px;
     }
+
+    @include mobile {
+      gap: 0;
+    }
+
 
     h3 {
       font-family: $font-family;
-      font-weight: 550;
+      font-weight: 600;
       font-size: 40px;
       line-height: 110%;
       color: $white;
 
       @include mobile {
-        font-size: 28px;
+        font-size: 32px;
+
+        margin-bottom: 22px;
       }
     }
 
@@ -593,8 +618,31 @@
       color: $white;
 
       @include mobile {
-        font-size: 16px;
+        font-size: 14px;
       }
+    }
+  }
+
+  &__imgMobile {
+    position: relative;
+
+    img {
+      display: none;
+      aspect-ratio: 324 / 253;
+
+      @include tablet {
+        display: block;
+      }
+
+      @include mobile {
+        margin-bottom: 30px;
+      }
+    }
+
+    svg {
+      position: absolute;
+      top: 0;
+      right: 0;
     }
   }
 }
@@ -603,12 +651,8 @@
   padding: 158px 0 158px;
   background-color: $dark-grey;
 
-  @include tablet {
-    padding: 90px 0 70px;
-  }
-
   @include mobile {
-    padding: 60px 0 50px;
+    padding: 70px 0 70px 0;
   }
 
   &__wrapp {
@@ -635,12 +679,8 @@
 
     @include maxdesktop {
       width: 100%;
-      max-width: none;
       padding: 27px 18px 25px 21px;
-    }
-
-    @include mobile {
-      padding: 32px 18px;
+      max-width: none;
     }
   }
 
@@ -670,7 +710,7 @@
     color: #000;
 
     @include mobile {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       font-size: 28px;
     }
   }
@@ -707,7 +747,7 @@
     margin-bottom: 45px;
 
     @include mobile {
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
   }
 
@@ -721,6 +761,10 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @include mobile {
+      gap: 7px;
+    }
   }
 
   &__label {
@@ -758,6 +802,10 @@
 
     @include tablet {
       max-width: 620px;
+    }
+
+    @include mobile {
+      gap: 25px;
     }
 
     h3 {
@@ -802,7 +850,7 @@
 
       @include mobile {
         width: 100%;
-        padding: 12px 20px;
+        padding: 18px 20px;
       }
 
       &:hover {
@@ -814,11 +862,22 @@
 }
 
 .map {
+
+  padding: 0 0 70px 0;
+  background-color: $dark-grey;
+
+  @include mobile {
+    padding: 0 0 48px 0;
+  }
+
   &__wrapp {
 
     iframe {
       border: none;
+      height: 424px;
       width: 100vw;
     }
   }
+
+
 }

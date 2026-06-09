@@ -1,11 +1,8 @@
-const OPEN_CLASS = 'catalog__aside--open';
 
-document.querySelectorAll('.catalog__toggle').forEach((toggle) => {
-  const aside = toggle.closest('.catalog__aside');
-  if (!aside) return;
+const categories = document.querySelector('.catalog__categories');
+const button = document.querySelector('.catalog__toggle');
 
-  toggle.addEventListener('click', () => {
-    const isOpen = aside.classList.toggle(OPEN_CLASS);
-    toggle.setAttribute('aria-expanded', String(isOpen));
-  });
-});
+
+button.addEventListener('click', () => {
+  categories.classList.toggle('active');
+})

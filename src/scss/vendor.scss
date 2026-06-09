@@ -9,5 +9,5 @@
 // стили для библиотеки aos
 // @import "../../node_modules/aos/dist/aos";
 
-// стили для свайпера
-@import "../../node_modules/swiper/swiper-bundle.min.css";
+// стили для свайпера — подключены через CDN в partials/head.html
+// (Sass не инлайнит .css-импорты, оставляет нативный @import — браузер пытается тянуть node_modules)
