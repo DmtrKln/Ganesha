@@ -6,7 +6,7 @@
   padding: 25px 0;
   background-color: $dark-grey;
 
-  @include maxdesktop{
+  @include maxdesktop {
     padding: 25px 0 20px 0;
   }
 
@@ -84,6 +84,28 @@
     @include maxdesktop {
       display: none;
     }
+  }
+
+  &__wrappMobile {
+    align-items: center;
+    display: none;
+  
+    width: 70px;
+    gap: 15px;
+
+    @include maxdesktop{
+      display: flex;
+    }
+  }
+
+  &__mobileTel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.50px solid $green;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
   }
 
   &__num {
@@ -169,7 +191,7 @@
     span:nth-child(3) {
       width: 14px;
       height: 2px;
-    } 
+    }
 
     &.active {
       span:nth-child(1) {
@@ -189,7 +211,7 @@
 
   &__mobile {
     position: fixed;
-    top: -100%;
+    top: -200%;
     left: 0;
     z-index: 100000;
     display: flex;
@@ -288,7 +310,7 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      width: 100vw; 
+      width: 100vw;
       height: 2px;
       background: #434244;
       bottom: 0;
@@ -321,10 +343,10 @@
     width: 40px;
     height: 40px;
 
-    &:hover{
+    &:hover {
       border: 2px solid $green;
 
-      svg path{
+      svg path {
         fill: $green;
       }
     }

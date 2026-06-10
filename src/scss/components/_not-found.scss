@@ -4,76 +4,73 @@
   padding: 158px 0 100px;
   background-color: $dark-grey;
 
-  @include tablet {
-    padding: 130px 0 80px;
-  }
-
   @include mobile {
-    padding: 100px 0 50px;
+    padding: 0 0 45px;
   }
 
   &__wrapp {
-    display: flex;
-    align-items: center;
-    gap: 30px;
 
     @include tablet {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 24px;
+      display: flex;
+      
+      gap: 30px;
+    }
+
+
+  }
+
+  &__imgMobile {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+
+    width: 100%;
+
+    @include small-tablet {
+      opacity: 1;
+      visibility: visible;
+      position: relative;
     }
   }
 
   &__img {
-    flex-shrink: 0;
-    width: 55%;
-    max-width: 1128px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 61vw;
+    max-width: 958px;
     height: auto;
     object-fit: contain;
-    order: 2;
+    pointer-events: none;
 
     @include tablet {
-      width: 100%;
-      max-width: 480px;
-      margin: 0 auto;
-      order: 1;
-    }
-
-    @include mobile {
-      max-width: 320px;
+      display: none;
     }
   }
 
   &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 42px;
-    flex-shrink: 0;
-    width: 562px;
-    order: 1;
-
-    @include laptop {
-      width: 50%;
-    }
-
-    @include tablet {
-      width: 100%;
-      align-items: center;
-      text-align: center;
-      gap: 30px;
-      order: 2;
-    }
+    margin-right: auto;
+    max-width: 562px;
 
     @include mobile {
-      gap: 24px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      width: 318px;
+
+  
+      order: 1;
     }
+
+
   }
 
   &__title {
     font-family: $font-family;
     font-weight: 700;
-    font-size: 320px;
-    line-height: 100%;
+    font-size: 322px;
+    line-height: 110%;
     color: $green;
 
     @include laptop {
@@ -84,21 +81,14 @@
       font-size: 180px;
     }
 
-    @include small-tablet {
-      font-size: 140px;
-    }
-
-    @include mobile {
-      font-size: 100px;
-    }
   }
 
   &__subtitle {
-    margin-top: -28px;
+    text-align: left;
     font-family: $font-family;
     font-weight: 700;
     font-size: 40px;
-    line-height: 44px;
+    line-height: 110%;
     color: $green;
 
     @include tablet {
@@ -114,28 +104,26 @@
   }
 
   &__desc {
-    max-width: 562px;
     font-family: $font-family;
     font-weight: 700;
     font-size: 30px;
-    line-height: 33px;
-    color: $white;
+    line-height: 110%;
+    text-align: left;
+    color: #fff;
 
-    @include tablet {
-      font-size: 22px;
-      line-height: 26px;
-    }
+    margin-bottom: 42px;
 
     @include mobile {
       font-size: 16px;
-      line-height: 20px;
+
+      margin-bottom: 20px;
     }
   }
 
   &__btns {
     display: flex;
     flex-wrap: wrap;
-    gap: 18px;
+    gap: 15px;
 
     @include tablet {
       justify-content: center;
@@ -144,50 +132,52 @@
     @include mobile {
       flex-direction: column;
       width: 100%;
-      gap: 14px;
+      gap: 10px;
     }
+  }
+
+  &__btn:nth-child(1) {
+    background: $green;
+    border: 1px solid transparent;
+  }
+
+  &__btn:nth-child(2) {
+    background: transparent;
+    border: 1px solid $white;
   }
 
   &__btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 315px;
-    height: 55px;
     border-radius: 50px;
-    padding: 0 24px;
+    padding: 14px 45px;
     font-family: $font-family;
     font-weight: 700;
     font-size: 22px;
-    line-height: 24px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    line-height: 110%;
+    color: #fff;
+    white-space: nowrap;
+
+    width: 315px;
 
     @include mobile {
       width: 100%;
-      height: 50px;
-      font-size: 18px;
-      line-height: 20px;
+      padding: 14px 20px;
+      font-size: 22px;
     }
 
-    &--primary {
-      background-color: $green;
-      color: $white;
-      border: 2px solid $green;
-
-      &:hover {
-        background-color: transparent;
-        color: $green;
-      }
+    &:hover {
+      background-color: $white;
+      border: 1px solid transparent;
+      color: #000;
     }
 
-    &--outline {
-      border: 2px solid $white;
-      color: $white;
-
-      &:hover {
-        background-color: $white;
-        color: $dark-grey;
-      }
+    &:active {
+      background-color: #505050;
+      border: 1px solid transparent;
+      color: $light-grey;
     }
+
   }
 }

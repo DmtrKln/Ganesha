@@ -1,8 +1,20 @@
-
 const categories = document.querySelector('.catalog__categories');
 const button = document.querySelector('.catalog__toggle');
+const overlay = document.querySelector('.catalog__overlayCategory')
 
+if (categories && button) {
+  button.addEventListener('click', (e) => {
+    e.stopPropagation();              
+    categories.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
 
-button.addEventListener('click', () => {
-  categories.classList.toggle('active');
-})
+  document.addEventListener('click', (e) => {
+    
+    if (categories.contains(e.target) || button.contains(e.target)) {
+      return;
+    }
+    categories.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+}
