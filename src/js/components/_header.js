@@ -32,6 +32,7 @@ const formModal = document.querySelector('.header__modal[data-modal="form"]');
 const successModal = document.querySelector('.header__modal[data-modal="success"]');
 const modalForm = document.querySelector('[data-modal-form]');
 const headerBtn = document.querySelector('.header__btn');
+const headerMobileTel = document.querySelector('.header__mobileTel');
 
 const openModal = (modal) => {
   if (!modal) return;
@@ -46,6 +47,12 @@ const closeModal = () => {
 };
 
 headerBtn?.addEventListener('click', (e) => {
+  e.preventDefault();
+  closeMenu();
+  openModal(formModal);
+});
+
+headerMobileTel?.addEventListener('click', (e) => {
   e.preventDefault();
   closeMenu();
   openModal(formModal);

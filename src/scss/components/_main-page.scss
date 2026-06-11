@@ -1,4 +1,4 @@
-.hero {
+.bannert {
   position: relative;
   overflow: hidden;
   padding: 280px 0 240px 0;
@@ -417,7 +417,7 @@
 
     align-self: center;
 
-    @include mobile {
+    @media (max-width: 900px) {
       display: none;
     }
   }
@@ -435,10 +435,11 @@
 
     display: none;
 
-    @include mobile {
+    @media (max-width: 900px) {
       display: block;
-    }
+    } 
   }
+  
 
   &__swiperWrapp {
     margin-bottom: 33px;

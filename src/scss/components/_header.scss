@@ -89,11 +89,11 @@
   &__wrappMobile {
     align-items: center;
     display: none;
-  
+
     width: 70px;
     gap: 15px;
 
-    @include maxdesktop{
+    @include maxdesktop {
       display: flex;
     }
   }
@@ -211,7 +211,7 @@
 
   &__mobile {
     position: fixed;
-    top: -200%;
+    top: -300%;
     left: 0;
     z-index: 100000;
     display: flex;
@@ -221,7 +221,9 @@
     height: 100dvh;
     padding: 95px 25px 45px;
     background-color: $dark-grey;
-    transition: top 0.3s ease;
+    transition: top 0.5s ease;
+
+    overflow-y: auto;
 
     &.active {
       top: 0;
@@ -374,9 +376,9 @@
   &__modalWrapp {
     position: relative;
     width: 100%;
-    max-width: 540px;
+    max-width: 505px;
     border-radius: 5px;
-    padding: 60px 55px 50px;
+    padding: 38px 30px 46px 30px;
     background-color: $white;
 
     @include mobile {
@@ -385,12 +387,12 @@
   }
 
   .header__modal--success &__modalWrapp {
-    max-width: 540px;
-    min-height: 240px;
+    max-width: 505px;
+    min-height: 244px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 40px;
+    padding: 78px 68px;
 
     @include mobile {
       min-height: 200px;
@@ -420,16 +422,15 @@
   }
 
   &__modalTitle {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     font-family: $font-family;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 120%;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 110%;
     color: $dark-grey;
 
     @include mobile {
-      margin-bottom: 28px;
-      font-size: 24px;
+      margin-bottom: 30px;
     }
 
     &--center {
@@ -441,19 +442,19 @@
   &__modalForm {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 25px;
   }
 
   &__modalField {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 18px;
   }
 
   &__modalLabel {
     font-family: $font-family;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 110%;
     color: $dark-grey;
   }
@@ -466,8 +467,9 @@
     padding: 10px 16px;
     background-color: $white;
     font-family: $font-family;
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 110%;
     color: $dark-grey;
     outline: none;
     transition: border-color 0.3s ease;
@@ -477,16 +479,85 @@
     }
   }
 
+  .header__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__checkboxInput {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    border: 2px solid $dark-grey;
+    border-radius: 8px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0;
+    cursor: pointer;
+    transition: background-size 0.15s ease, border-color 0.15s ease;
+  }
+
+  &__checkboxInput::before {
+    content: "";
+    width: 15px;
+    height: 10px;
+    transform: scale(0);
+    transition: transform 0.15s ease;
+    background-color: transparent;
+    clip-path: polygon(13% 50%, 4% 60%, 42% 90%, 100% 14%, 92% 4%, 40% 72%);
+  }
+
+  &__checkboxInput:checked {
+    border-color: $dark-grey;
+    background-size: 70%; 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c2c2c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7'/%3E%3C/svg%3E");
+  }
+
+  &__checkboxInput:checked::before {
+    transform: scale(1);
+    background-color: $dark-grey;
+  }
+
+  &__checkboxInput:focus-visible {
+    outline-offset: 2px;
+  }
+
+  &__checkboxLabel {
+    color: $dark-grey;
+    user-select: none;
+
+    font-family: $font-family;
+    font-weight: 300;
+    font-size: 14px;
+
+
+    a {
+      color: $dark-grey;
+      user-select: none;
+
+      font-family: $font-family;
+      font-weight: 300;
+      font-size: 14px;
+      text-decoration: underline;
+    }
+  }
+
   &__modalBtn {
     margin-top: 14px;
     border-radius: 5px;
-    padding: 16px 24px;
+    padding: 20px 20px;
     background-color: $dark-grey;
     font-family: $font-family;
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 22px;
     line-height: 110%;
     color: $white;
+    width: 100%;
     cursor: pointer;
     transition: background-color 0.3s ease;
 
