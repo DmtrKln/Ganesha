@@ -12,12 +12,8 @@
     height: 455px;
     object-fit: cover;
 
-    @include tablet {
-      height: 320px;
-    }
-
     @include mobile {
-      height: 240px;
+      height: 415px;
     }
   }
 }
@@ -109,11 +105,11 @@
     svg {
       flex-shrink: 0;
       transition: transform 0.3s ease;
-    }
-  }
 
-  &__active &__toggle svg {
-    transform: rotate(180deg);
+      &.active{
+        transform: rotate(180deg);
+      }
+    }
   }
 
   &__overlayCategory {

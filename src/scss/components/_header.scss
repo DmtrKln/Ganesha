@@ -514,7 +514,7 @@
 
   &__checkboxInput:checked {
     border-color: $dark-grey;
-    background-size: 70%; 
+    background-size: 70%;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c2c2c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7'/%3E%3C/svg%3E");
   }
 
@@ -559,10 +559,16 @@
     color: $white;
     width: 100%;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 
     &:hover {
-      background-color: $green;
+      opacity: 0.7;
+    }
+
+    &:active {
+      background-color: #505050;
+      border-color: #505050;
+      color: $white;
     }
   }
 }

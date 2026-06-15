@@ -6,7 +6,7 @@
   <div class="site-container">
     @include('partials/header.html')
     <main class="main">
-      <section class="bannert">
+      <section class="bannert" id="main">
         <img src="img/main/heroImgMobile.png" class="bannert__imgMobile" alt="" />
         <div class="container">
           <div class="bannert__wrapp">
@@ -17,7 +17,7 @@
                 предлагаем высококачественные компоненты для любых нужд!
               </h2>
             </div>
-            <a href="#catalog">Посмотреть каталог</a>
+            <a href="catalog.html">Посмотреть каталог</a>
           </div>
         </div>
         <img src="img/main/heroImg.png" class="bannert__img" alt="" />
@@ -26,20 +26,45 @@
         <div class="container swiperContainer">
           <div class="catalogPreview__wrapp">
             <div class="catalogPreview__item">
-              <a href="#goods">Каталог</a>
+              <a href="catalog.html">Каталог</a>
               <a href="#form">Контакты</a>
               <a href="#about">О нас</a>
             </div>
             <div class="catalogPreview__cards">
-              <div class="swiper-wrapper">
-                <img src="img/main/catalogPreviewCard1.png" alt="Швейные кнопки и фурнитура" class="swiper-slide" />
-                <img src="img/main/catalogPreviewCard2.png" alt="Люверсы и металлическая фурнитура"
-                  class="swiper-slide" />
-                <img src="img/main/catalogPreviewCard3.png" alt="Нитки и расходные материалы" class="swiper-slide" />
-                <img src="img/main/catalogPreviewCard1.png" alt="Швейные кнопки и фурнитура" class="swiper-slide" />
-                <img src="img/main/catalogPreviewCard2.png" alt="Люверсы и металлическая фурнитура"
-                  class="swiper-slide" />
-                <img src="img/main/catalogPreviewCard3.png" alt="Нитки и расходные материалы" class="swiper-slide" />
+              <div class="catalogPreview__slider swiper">
+                <div class="catalogPreview__wrapper swiper-wrapper">
+
+                  <div class="catalogPreview__card swiper-slide" data-fancybox="catalog-gallery"
+                    data-src="img/main/catalogPreviewCard1.png">
+                    <img src="img/main/catalogPreviewCard1.png" alt="Швейные кнопки и фурнитура" />
+                  </div>
+
+                  <div class="catalogPreview__card swiper-slide" data-fancybox="catalog-gallery"
+                    data-src="img/main/catalogPreviewCard2.png">
+                    <img src="img/main/catalogPreviewCard2.png" alt="Люверсы и металлическая фурнитура" />
+                  </div>
+
+                  <div class="catalogPreview__card swiper-slide" data-fancybox="catalog-gallery"
+                    data-src="img/main/catalogPreviewCard3.png">
+                    <img src="img/main/catalogPreviewCard3.png" alt="Нитки и расходные материалы" />
+                  </div>
+
+                  <div class="catalogPreview__card swiper-slide" data-fancybox="catalog-gallery"
+                    data-src="img/main/catalogPreviewCard1.png">
+                    <img src="img/main/catalogPreviewCard1.png" alt="Швейные кнопки и фурнитура" />
+                  </div>
+
+                  <div class="catalogPreview__card swiper-slide" data-fancybox="catalog-gallery"
+                    data-src="img/main/catalogPreviewCard2.png">
+                    <img src="img/main/catalogPreviewCard2.png" alt="Люверсы и металлическая фурнитура" />
+                  </div>
+
+                  <div class="catalogPreview__card swiper-slide" data-fancybox="catalog-gallery"
+                    data-src="img/main/catalogPreviewCard3.png">
+                    <img src="img/main/catalogPreviewCard3.png" alt="Нитки и расходные материалы" />
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>

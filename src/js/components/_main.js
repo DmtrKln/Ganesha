@@ -40,21 +40,27 @@ const swiper = new Swiper('.reviews-slider', {
 
 
 
-const catalogPreview = new Swiper(".catalogPreview__cards", {
+const catalogPreview = new Swiper(".catalogPreview__slider", {
 
   slidesPerView: 1.3,
-  spaceBetween: 15,
+  spaceBetween: 20,
   speed: 800,
   watchSlidesProgress: true,
   loop: true,
 
 
   breakpoints: {
+
+    0: {
+      slidesPerView: 1.3,
+      spaceBetween: 15,
+    },
+
     768: {
       slidesPerView: 2.3,
     },
     1200: {
-      slidesPerView: 3.3,
+      slidesPerView: 3,
       spaceBetween: 20,
     },
 
@@ -63,6 +69,14 @@ const catalogPreview = new Swiper(".catalogPreview__cards", {
 
 });
 
+Fancybox.bind("[data-fancybox]", {
+  Carousel: {
+    Panzoom: {
+      click: "close",
+      clickOutside: "close",
+    },
+  },
+});
 
 
 

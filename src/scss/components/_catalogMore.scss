@@ -1,0 +1,323 @@
+.catalogBanner {
+    padding-top: 81px;
+    background-color: $dark-grey;
+
+    @include mobile {
+        padding-top: 71px;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 455px;
+        object-fit: cover;
+
+        @include mobile {
+            height: 415px;
+        }
+    }
+}
+
+.catalog {
+    padding: 60px 0 0 0;
+    background-color: $dark-grey;
+
+    @include tablet {
+        padding: 36px 0 0 0;
+    }
+
+    &__breadcrumbsMoreWrapp {
+        display: flex;
+        align-items: end;
+        gap: 10px;
+        margin-bottom: 40px;
+        height: 44px;
+
+        display: none;
+
+        @include tablet {
+            display: none;
+        }
+
+        a {
+
+            font-family: $font-family;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: $white;
+            transition: color 0.3s ease;
+
+            &:visited {
+                font-family: $third-family;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: rgba(251, 251, 251, 0.52);
+            }
+        }
+
+    }
+
+    &__breadcrumbsMobile {
+        display: none;
+
+        a {
+            font-family: $font-family;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 110%;
+            color: $white;
+            transition: color 0.3s ease;
+
+            &:visited {
+                font-family: $third-family;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: rgba(251, 251, 251, 0.52);
+            }
+        }
+
+        @include tablet {
+            display: block;
+        }
+    }
+
+    &__breadcrumbsMore {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__wrapp {
+        display: flex;
+        align-items: flex-start;
+        gap: 63px;
+
+        @include tablet {
+            flex-direction: column;
+            gap: 34px;
+
+        }
+
+    }
+
+    &__aside {
+        flex-shrink: 0;
+        width: 400px;
+        position: relative;
+
+        @include tablet {
+            display: none;
+        }
+
+    }
+
+    &__toggle {
+        display: none;
+
+        @include tablet {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border-radius: 5px;
+            padding: 10px 16px;
+            background-color: $green;
+            font-family: $font-family;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 110%;
+            color: $white;
+            cursor: pointer;
+        }
+
+        h2 {
+            font: inherit;
+            color: inherit;
+        }
+
+        svg {
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+
+            &.active {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__overlayCategory {
+        @include small-tablet {
+            position: static;
+        }
+
+        &.active {
+            @include small-tablet {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    &__categories {
+        display: flex;
+        flex-direction: column;
+        background: #353535;
+        border-radius: 5px;
+
+        z-index: 99999999;
+
+        @include tablet {
+            position: absolute;
+            top: calc(100% + 14px);
+            left: 0;
+            width: 100%;
+            overflow-y: auto;
+
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+        }
+
+        &.active {
+            @include tablet {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        }
+
+        li {
+            padding: 15px 30px;
+
+            @include mobile {
+                padding: 10px 21px;
+            }
+
+            &:hover {
+                background-color: $green;
+            }
+
+            &--active {
+                background-color: $green;
+            }
+        }
+    }
+
+
+    &__category {
+        display: block;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: $white;
+        transition: background-color 0.3s ease;
+
+        @include mobile {
+            font-size: 16px;
+        }
+
+    }
+
+    &__content {
+        flex: 1;
+        min-width: 0;
+    }
+
+
+
+    &__titleMore {
+        font-family: $font-family;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 110%;
+        color: $white;
+        margin-bottom: 40px;
+
+
+        @include mobile {
+            font-size: 34px;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 70px 38px;
+
+
+        @include mobile {
+            gap: 56px;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        width: calc((100% - 76px) / 3);
+
+        @include maxdesktop {
+            width: calc((100% - 38px) / 2);
+        }
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__cardImg {
+        width: 100%;
+        aspect-ratio: 277 / 330;
+        margin-bottom: 16px;
+        border-radius: 5px;
+        object-fit: cover;
+
+        @include tablet {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__cardTitle {
+        margin-bottom: 14px;
+        font-family: $font-family;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 110%;
+        text-transform: uppercase;
+        color: #fff;
+
+        @include mobile {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__cardDesc {
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 110%;
+        color: $white;
+        opacity: 0.6;
+
+    }
+
+    &__cardLink {
+        font-family: $font-family;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 110%;
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        color: $green;
+        transition: opacity 0.3s ease;
+        text-align: right;
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+}

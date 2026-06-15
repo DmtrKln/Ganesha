@@ -58,7 +58,7 @@
       font-size: 24px;
       line-height: 110%;
       color: $white;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: all 0.3s ease;
 
       @include mobile {
         width: 100%;
@@ -68,14 +68,12 @@
 
       &:hover {
         background-color: $white;
-        border: 1px solid transparent;
         color: #000;
       }
 
       &:active {
-        background-color: #505050;
-        border: 1px solid transparent;
-        color: $light-grey;
+        background-color: $light-grey;
+        color: $dark-grey;
       }
     }
   }
@@ -194,22 +192,22 @@
   }
 
   &__cards {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
+    position: relative;
+
+    .swiper {
+      overflow: hidden;
+    }
+
+    .catalogPreview__card {
+      cursor: pointer;
+    }
 
     img {
-      width: calc((100% - 40px) / 3);
+      display: block;
+      width: 100%;
       aspect-ratio: 444 / 395;
+      object-fit: cover;
       border-radius: 5px;
-
-      @include tablet {
-        width: calc((100% - 20px) / 2);
-      }
-
-      @include mobile {
-        width: 100%;
-      }
     }
   }
 }
@@ -437,9 +435,9 @@
 
     @media (max-width: 900px) {
       display: block;
-    } 
+    }
   }
-  
+
 
   &__swiperWrapp {
     margin-bottom: 33px;

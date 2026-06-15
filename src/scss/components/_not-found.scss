@@ -9,6 +9,7 @@
   }
 
 &__wrapp{
+  
   @include mobile{
     display: flex;
     justify-content: center;
