@@ -1,4 +1,4 @@
-.catalogBanner {
+.moreBanner {
     padding-top: 81px;
     background-color: $dark-grey;
 
@@ -18,7 +18,7 @@
     }
 }
 
-.catalog {
+.more {
     padding: 60px 0 0 0;
     background-color: $dark-grey;
 
@@ -33,7 +33,7 @@
         margin-bottom: 40px;
         height: 44px;
 
-        display: none;
+
 
         @include tablet {
             display: none;
@@ -247,7 +247,7 @@
     &__cards {
         display: flex;
         flex-wrap: wrap;
-        gap: 70px 38px;
+        gap: 45px 46px;
 
 
         @include mobile {
@@ -258,10 +258,10 @@
     &__card {
         display: flex;
         flex-direction: column;
-        width: calc((100% - 76px) / 3);
+        width: calc((100% - 92px) / 3);
 
         @include maxdesktop {
-            width: calc((100% - 38px) / 2);
+            width: calc((100% - 46px) / 2);
         }
 
         @include mobile {

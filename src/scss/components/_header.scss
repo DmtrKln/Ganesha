@@ -64,7 +64,7 @@
 
     a {
       font-family: $third-family;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 16px;
       line-height: 110%;
       color: $white;
@@ -89,8 +89,9 @@
   &__wrappMobile {
     align-items: center;
     display: none;
+    justify-content: space-between;
 
-    width: 70px;
+    width: 80px;
     gap: 15px;
 
     @include maxdesktop {
@@ -110,7 +111,7 @@
 
   &__num {
     font-family: $third-family;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
     line-height: 110%;
     color: $white;
@@ -396,7 +397,7 @@
 
     @include mobile {
       min-height: 200px;
-      padding: 50px 25px;
+      padding: 90px 50px;
     }
   }
 
@@ -436,6 +437,19 @@
     &--center {
       margin-bottom: 0;
       text-align: center;
+    }
+  }
+
+  &__modalTitle--success {
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 110%;
+    text-align: center;
+    color: $dark-grey;
+
+    @include mobile{
+      font-size: 30px;
     }
   }
 

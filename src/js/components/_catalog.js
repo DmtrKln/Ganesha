@@ -7,8 +7,8 @@ if (categories && button) {
   button.addEventListener('click', (e) => {
     e.stopPropagation();              
     categories.classList.toggle('active');
-    catalogSvg.classList.toggle('active')
-    overlay.classList.toggle('active');
+    catalogSvg?.classList.toggle('active')
+    overlay?.classList.toggle('active');
   });
 
   document.addEventListener('click', (e) => {
@@ -17,6 +17,6 @@ if (categories && button) {
       return;
     }
     categories.classList.remove('active');
-    overlay.classList.remove('active');
+    overlay?.classList.remove('active');
   });
 }
